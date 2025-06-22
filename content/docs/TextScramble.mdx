@@ -1,0 +1,53 @@
+---
+
+title: Text Scramble
+description: A hover effect that scrambles characters and animates them back to the original text.
+author: deep
+published: true
+date: 2025-06-21
+slug: components/text-scramble
+---
+
+<ComponentPreview name="text-scramble-demo" />
+
+## Installation
+
+```bash
+npx shadcn@latest add "https://your-registry.com/r/fancy-button.json"
+```
+
+## Usage
+
+```tsx
+import { TestScramble } from "@/components/test-scramble";
+
+export default function Example() {
+  return <FancyButton>Click Me</FancyButton>;
+}
+```
+
+## Source Code
+
+<ComponentSource name="fancy-button" />
+
+## Variants
+
+
+## Features
+- ✅ Animated ripple effect  
+- 🌈 Multiple variants: `primary`, `outline`, `ghost`  
+- ♿ Accessible and keyboard-friendly  
+- 🎨 Fully customizable with Tailwind  
+- ⚙️ Typesafe props with IntelliSense support  
+
+## Notice
+
+## Props
+
+| Prop        | Type                               | Default     | Description                            |
+|-------------|------------------------------------|-------------|----------------------------------------|
+| `children`  | `React.ReactNode`                  | —           | Content inside the button              |
+| `variant`   | `"primary" \| "ghost" \| "outline"` | `"primary"` | Visual style of the button             |
+| `onClick`   | `() => void`                       | —           | Function to call on click              |
+| `disabled`  | `boolean`                          | `false`     | Whether the button is disabled         |
+| `className` | `string`                           | —           | Additional Tailwind classes            |
