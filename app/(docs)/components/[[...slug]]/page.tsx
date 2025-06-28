@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import { allDocs } from "content-collections"; // ✅ must be destructured
 import { Mdx } from "@/components/mdx-components";
-import type { Metadata } from "next";
 
-
+import Breadcrumbs from "@/components/breadcrumbs";
 interface DocPageProps {
   params: {
     slug: string[];
@@ -26,13 +25,14 @@ export default async function ComponentDocPage(props: DocPageProps) {
   if (!doc || !doc.published) {
     notFound();
   }
-  console.log("Compiled body.code:", doc.body.code);
   return (
-    <div className="max-w-4xl mx-auto py-10">
-      <h1 className="text-4xl font-bold">{doc.title}</h1>
+    
+    <div className="max-w-3xl mx-auto py-5 p-10 ">
+      <Breadcrumbs componentName={doc.title} />
+      <h1 className="text-4xl font-sans font-bold">{doc.title}</h1>
       <p className="text-muted-foreground mb-4">{doc.description}</p>
-      
-      <Mdx code={doc.body.code} />
+      <div className="prose"><Mdx code={doc.body.code} /></div>
     </div>
+    
   );
 }
