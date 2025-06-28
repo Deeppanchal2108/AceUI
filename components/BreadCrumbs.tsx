@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 function Breadcrumbs({componentName}:{componentName: string}) {
   return (
-      <nav className="text-sm text-gray-400 mb-4">
+      <nav className="text-sm text-gray-400 ">
           <ol className="list-reset flex">
               <li>
                   <Link href="/" className="hover:text-white">Documentation</Link>

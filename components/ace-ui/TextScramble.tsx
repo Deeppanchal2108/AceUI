@@ -13,7 +13,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
 export const TextScramble: React.FC<TextScrambleProps> = ({
     children= "Scramble Me!",
     speed = 50,
-    duration = 800,
+    duration = 600,
     className = ""
 }) => {
     const [displayText, setDisplayText] = useState(children);
@@ -57,7 +57,7 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
 
     return (
         <span
-            className={`cursor-pointer transition-colors ${className}`}
+            className={`cursor-pointer transition-colors text-5xl font-jost font-bold ${className}`}
             onMouseEnter={scramble}
         >
             {displayText}
