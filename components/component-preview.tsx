@@ -5,12 +5,12 @@ export function ComponentPreview({ name }: { name: string }) {
   
 
     if (!Component) {
-        return <div className="text-red-500">Component "{name}" not found in componentMap.</div>;
+        return <div className="text-red-500">Component "{name}" not exists .</div>;
       }
     return (
         <>
-            <div className="max-w-full bg-black min-h-[400px] mx-auto py-5 flex justify-center items-center 
-    rounded-3xl border border-gray-700 shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 my-14">
+            <div className="max-w-full bg-gray-950 min-h-[400px] mx-auto py-5 flex justify-center items-center 
+    rounded-lg border border-gray-700 shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 mt-14">
 
                 <div className="w-full h-full flex justify-center items-center">
                     <Component className="" />

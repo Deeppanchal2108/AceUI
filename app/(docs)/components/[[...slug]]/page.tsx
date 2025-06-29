@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { allDocs } from "content-collections"; // ✅ must be destructured
 import { Mdx } from "@/components/mdx-components";
 
-import Breadcrumbs from "@/components/breadcrumbs";
+import Breadcrumbs from "@/components/BreadCrumbs";
 interface DocPageProps {
   params: {
     slug: string[];
@@ -29,16 +29,16 @@ export default async function ComponentDocPage(props: DocPageProps) {
     (
       <div className="relative bg-black min-h-screen text-white ">
 
-        {/* 🟣 Grid in the top-right of the full page */}
         <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none z-0">
-          <div className="absolute top-0 right-0 w-[700px] h-[500px] pointer-events-none z-0
+          <div className="fixed top-0 right-0 w-[700px] h-[500px] pointer-events-none z-0
   bg-[linear-gradient(#222_1px,transparent_1px),linear-gradient(90deg,#222_1px,transparent_1px)]
   bg-[size:60px_60px] opacity-70 fade-diagonal-mask"/>
         </div>
 
-        {/* 🧱 Content */}
         <div className="relative z-10 max-w-3xl mx-auto py-5 px-6 ">
-          <div className="my-10"> <Breadcrumbs componentName={doc.title} /></div>
+          <div className="my-10">
+            <Breadcrumbs componentName={doc.title} />
+          </div>
           
           <h1 className="text-4xl font-bold">{doc.title}</h1>
           <p className="text-gray-400">{doc.description}</p>
