@@ -13,11 +13,40 @@ slug: components/text-scramble
 
 ## Installation
 
+<Tabs defaultValue="cli">
+
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+
+</TabsList>
+
+<TabsContent value="cli">
 ```bash
 npx shadcn@latest add "https://your-registry.com/r/fancy-button.json"
 ```
 
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="text-scramble" />
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+
+
+
+
 ## Usage
+
 
 ```tsx
 import { TestScramble } from "@/components/test-scramble";
@@ -26,10 +55,6 @@ export default function Example() {
   return <FancyButton>Click Me</FancyButton>;
 }
 ```
-
-## Source Code
-
-<ComponentSource name="text-scramble" />
 
 ## Variants
 

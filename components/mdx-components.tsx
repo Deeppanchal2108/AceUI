@@ -6,11 +6,63 @@ import { useMDXComponent } from "@content-collections/mdx/react"; // OR "@mdx-js
 import { ComponentSource } from "@/components/component-source";
 import InfoOut from "./InfoOut";
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 
 const components = {
 ComponentPreview,
     ComponentSource,
     InfoOut,
+    pre: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+        <pre
+            className={cn(" bg-zinc-800 z-10 overflow-x-auto scroll-auto p-2 rounded-lg   text-white ", className)}
+            {...props}
+        />
+
+    ),
+ Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
+        <Tabs
+            className={cn("relative mt-6 w-full overflow-x-auto", className)}
+            {...props}
+        />
+    ),
+    TabsList: ({
+        className,
+        ...props
+    }: React.ComponentProps<typeof TabsList>) => (
+        <TabsList
+            className={cn(
+                "w-full flex justify-start rounded-none border-b bg-transparent p-0",
+                className,
+            )}
+            {...props}
+        />
+    ),
+    TabsTrigger: ({
+        className,
+        ...props
+    }: React.ComponentProps<typeof TabsTrigger>) => (
+        <TabsTrigger
+            className={cn(
+                "relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-all duration-400 ease-in-out data-[state=active]:bg-transparent   data-[state=active]:shadow-none data-[state=active]:text-white data-[state=active]:border-b-white ",
+                "flex-shrink-0 flex-grow-0",
+                className,
+            )}
+            {...props}
+        />
+    ),
+    TabsContent: ({
+        className,
+        ...props
+    }: React.ComponentProps<typeof TabsContent>) => (
+        <TabsContent
+            className={cn(
+                "relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold",
+                className,
+            )}
+            {...props}
+        />
+        ),
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
         <h1 className={cn("font-heading mt-2 scroll-m-20 text-4xl font-bold", className)}
         
@@ -64,6 +116,21 @@ ComponentPreview,
             {...props}
         />
     ),
+    Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+        <h3
+            className={cn(
+                "font-heading mt-8 mb-2 scroll-m-20 text-xl font-semibold tracking-tight",
+                className,
+            )}
+            {...props}
+        />
+    ),
+    Steps: ({ ...props }) => (
+        <div
+            className="[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent"
+            {...props}
+        />
+      ),
    
     p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
         <p

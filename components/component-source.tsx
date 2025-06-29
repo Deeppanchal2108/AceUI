@@ -31,7 +31,7 @@ if(!Component) {
     }, [name]);
 
     return (
-        <pre className="whitespace-pre-wrap rounded-md bg-slate-800 p-4 text-white text-sm overflow-x-auto">
+        <pre className="whitespace-pre-wrap rounded-md bg-zinc-800 p-4 text-white text-sm overflow-x-auto">
             <code>{code}</code>
       </pre>
     );
