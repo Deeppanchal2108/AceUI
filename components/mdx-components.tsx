@@ -5,17 +5,77 @@ import { useMDXComponent } from "@content-collections/mdx/react"; // OR "@mdx-js
  import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import InfoOut from "./InfoOut";
+import CopyCode from "./CopyCode";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table"
 
 
 const components = {
 ComponentPreview,
     ComponentSource,
     InfoOut,
+    CopyCode,
+    Table: ({ className, ...props }: React.ComponentProps<typeof Table>) => (
+        <Table
+            className={cn("w-full text-sm text-gray-100 bg-zinc-900  border-zinc-700 rounded-lg overflow-hidden shadow-sm", className)}
+            {...props}
+        />
+
+    ),
+    TableBody: ({ className, ...props }: React.ComponentProps<typeof TableBody>) => (
+        <TableBody
+            className={cn("divide-y divide-zinc-700", className)}
+            {...props}
+        />
+
+    ),
+    TableCaption: ({ className, ...props }: React.ComponentProps<typeof TableCaption>) => (
+        <TableCaption
+            className={cn("text-gray-400 text-sm py-2", className)}
+            {...props}
+        />
+
+    ),
+    TableCell: ({ className, ...props }: React.ComponentProps<typeof TableCell>) => (
+        <TableCell
+            className={cn("px-4 py-3 text-sm text-gray-200", className)}
+            {...props}
+        />
+
+    ),
+    TableHead: ({ className, ...props }: React.ComponentProps<typeof TableHead>) => (
+        <TableHead
+            className={cn("px-4 py-2 text-left font-semibold text-gray-200 text-sm", className)}
+            {...props}
+        />
+
+    ),
+    TableHeader: ({ className, ...props }: React.ComponentProps<typeof TableHeader>) => (
+        <TableHeader
+            className={cn("bg-zinc-800", className)}
+            {...props}
+        />
+
+    ),
+    TableRow: ({ className, ...props }: React.ComponentProps<typeof TableRow>) => (
+        <TableRow
+            className={cn("transition-colors hover:bg-zinc-700 odd:bg-zinc-900 even:bg-zinc-800", className)}
+            {...props}
+        />
+
+    ),
     pre: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <pre
-            className={cn(" bg-zinc-800 z-10 overflow-x-auto scroll-auto p-2 rounded-lg   text-white ", className)}
+            className={cn(" bg-zinc-800 z-10 overflow-x-auto scroll-auto p-2 rounded-sm   text-white ", className)}
             {...props}
         />
 

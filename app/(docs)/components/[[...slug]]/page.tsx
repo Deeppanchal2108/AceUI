@@ -5,7 +5,7 @@ import { Mdx } from "@/components/mdx-components";
 import Breadcrumbs from "@/components/BreadCrumbs";
 interface DocPageProps {
   params: {
-    slug: string[];
+    slug?: string[];
   };
 }
 async function getDocFromParams(props: DocPageProps) {
