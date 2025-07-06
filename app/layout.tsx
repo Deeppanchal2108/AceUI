@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Jost ,DM_Sans} from "next/font/google";
-
+import Navbar from "@/components/main-nav";
 import "./globals.css";
 
 const jost = Jost({
@@ -31,7 +31,16 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${jost.variable} antialiased bg-black`}
       >
-        {children}
+        <div className="min-h-screen">
+
+          <div className="fixed top-0 left-0 w-full z-50">
+            <Navbar />
+          </div>
+          
+          <main className="pt-16">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

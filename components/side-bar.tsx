@@ -15,7 +15,7 @@ import Link from "next/link"
 
 export function AppSidebar() {
     return (
-        <Sidebar className="h-screen w-56  flex flex-col bg-black " >
+        <Sidebar className="h-screen w-56 pt-16  flex flex-col bg-black " >
             <SidebarContent className="bg-black text-white ">
                 <SidebarGroup>
 
