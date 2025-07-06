@@ -4,8 +4,8 @@ import { useMDXComponent } from "@content-collections/mdx/react"; // OR "@mdx-js
 // import * as UI from "../components/ui";
  import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
-import InfoOut from "./InfoOut";
-import CopyCode from "./CopyCode";
+import InfoOut from "./info-out";
+import CopyCode from "./copy-code";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {

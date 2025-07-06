@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${jost.variable} antialiased`}
+        className={`${dmSans.variable} ${jost.variable} antialiased bg-black`}
       >
         {children}
       </body>

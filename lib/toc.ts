@@ -12,12 +12,11 @@ export function getToc(markdown: string): Promise<Toc[]> {
 
     const tree = remark().parse(markdown);
     const headings: Toc[] = [];
-console.log("tree ," ,tree)
     visit(tree, "heading", (node: any) => {
 
         if(node.depth === 2){
             const title = toString(node);
-            console.log("Found heading:", title, "at depth", node.depth);
+        
             const url =
                 "#" +
                 title
