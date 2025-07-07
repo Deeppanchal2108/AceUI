@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
 import CommandMenu from './command';
 import { cn } from '@/lib/utils';
 
@@ -14,19 +13,19 @@ import { cn } from '@/lib/utils';
             {
                  <div className=' flex flex-row gap-x-4'>
                     <Link href={"/"}>
-                        <Button className='' variant={"ghost"}>
+                        <Button className='hover:bg-transparent  hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300' variant={"ghost"}>
 
                             Docs
                         </Button>
                     </Link>
                     <Link href={"/"}>
-                        <Button variant={"ghost"}>
+                        <Button className='hover:bg-transparent hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300'  variant={"ghost"}>
                            
                             Components
                         </Button>
                     </Link>
                     <Link href={"/"}>
-                        <Button variant={"ghost"}>
+                        <Button className='hover:bg-transparent  hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300'  variant={"ghost"}>
                             Backgrounds
                           
 
