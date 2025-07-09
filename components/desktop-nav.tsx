@@ -13,19 +13,19 @@ import { cn } from '@/lib/utils';
             {
                  <div className=' flex flex-row gap-x-4'>
                     <Link href={"/"}>
-                        <Button className='hover:bg-transparent  hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300' variant={"ghost"}>
+                        <Button className='hover:bg-transparent  hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300 text-sm font-semibold font-dmsans' variant={"ghost"}>
 
                             Docs
                         </Button>
                     </Link>
                     <Link href={"/"}>
-                        <Button className='hover:bg-transparent hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300'  variant={"ghost"}>
+                        <Button className='hover:bg-transparent hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300 text-sm font-semibold font-dmsans'  variant={"ghost"}>
                            
                             Components
                         </Button>
                     </Link>
-                    <Link href={"/"}>
-                        <Button className='hover:bg-transparent  hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300'  variant={"ghost"}>
+                    <Link href={"/backgrounds"}>
+                        <Button className='hover:bg-transparent  hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300 text-sm font-semibold font-dmsans'  variant={"ghost"}>
                             Backgrounds
                           
 

@@ -40,7 +40,7 @@ export default async function ComponentDocPage(props: DocPageProps) {
 
         <div className="flex flex-row w-full"> 
           <div className="relative z-10 max-w-2xl mx-auto py-5 px-6 ">
-            <div className="my-10">
+            <div className="mt-3 mb-7">
               <Breadcrumbs componentName={doc.title} />
             </div>
 

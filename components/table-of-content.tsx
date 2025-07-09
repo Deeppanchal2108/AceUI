@@ -24,7 +24,7 @@ const TableOfContents: React.FC<Props> = ({ toc }) => {
                 }
             },
             {
-                rootMargin: '0px 0px -60% 0px',
+                rootMargin: '0px 0px -40% 0px',
                 threshold: 0.1,
             }
         )
@@ -40,34 +40,41 @@ const TableOfContents: React.FC<Props> = ({ toc }) => {
     }, [toc])
 
     return (
-        <div>
-            
-        </div>
-//         <div className="fixed top-12 right-8 z-50 backdrop-blur-lg bg-transparent border border-white/20 shadow-lg p-6 rounded-xl w-64 space-y-6 h-fit">
-// <div>
-//                 <p className="text-sm  text-white/80 mb-2">On This Page</p>
-//                 <ul className="border-l border-gray-700 pl-4 space-y-2">
-//                     {toc.map((item) => {
-//                         const isActive = activeId === item.url
-//                         return (
-//                             <li key={item.title}>
-//                                 <Link
-//                                     href={item.url}
-//                                     className={`block transition-all duration-300 ${isActive
-//                                             ? 'text-white font-semibold border-l-2 border-indigo-400 pl-2 glow'
-//                                             : 'text-gray-400 hover:text-white'
-//                                         }`}
-//                                 >
-//                                     {item.title}
-//                                 </Link>
-//                             </li>
-//                         )
-//                     })}
-//                 </ul>
-//             </div>
+<div className="fixed top-24 right-8 z-50 backdrop-blur-lg bg-black/50 p-6 rounded-xl w-64 space-y-6 h-fit border border-white/10">
+  <div>
+    <p className="text-sm text-white/80 mb-2">On This Page</p>
 
-            
-//         </div>
+    <div className="relative pl-4">
+    
+      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-700" />
+
+      <ul className="space-y-2 w-full">
+        {toc.map((item) => {
+          const isActive = activeId === item.url;
+          return (
+            <li key={item.title} className="relative w-full">
+              {isActive && (
+                
+                <div className=" absolute left-0 top-1/2 -translate-y-1/2 h-6 w-0.5 bg-white" />
+              )}
+              <Link
+                href={item.url}
+                className={`block transition-all duration-300 pl-2 ${
+                  isActive
+                    ? "text-white font-semibold"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                {item.title}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </div>
+</div>
+
     )
 }
 
