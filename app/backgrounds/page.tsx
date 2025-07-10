@@ -33,7 +33,7 @@ function Page() {
                 </p>
             </div>
 
-            <div className="w-full px-5 my-10">
+            <div className="relative text-white">
                 
                 <ShowPattern pattern={pattern} setPattern={setPattern} />
 

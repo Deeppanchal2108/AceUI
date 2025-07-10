@@ -3,7 +3,7 @@ interface Pattern {
     id: string,
     name: string,
     label?: "New" | "",
-    category: "Gradients" | "Geometric" | "Simple",
+    category: "gradients" | "geometric" | "simple",
     style: CSSProperties,
     description?: string,
 
@@ -15,7 +15,7 @@ export const patterns: Pattern[] = [
     {
         id: "top-gradient-radial",
         name: "Top Gradient Radial",
-        category: "Simple",
+        category: "simple",
         style: {
             background:
                 "radial-gradient(125% 125% at 50% 10%, #fff 40%, #6366f1 100%)",
@@ -34,7 +34,7 @@ export const patterns: Pattern[] = [
     {
         id: "bottom-gradient-radial",
         name: "Bottom Gradient Radial",
-        category: "Simple",
+        category: "simple",
         label: "New",
         description: "Radial gradient from white to purple starting from bottom",
         style: {
@@ -55,7 +55,7 @@ export const patterns: Pattern[] = [
     {
         id: "bottom-violet-radial",
         name: "Bottom Violet Radial",
-        category: "Simple",
+        category: "simple",
         label: "New",
         description: "Rich violet from bottom - luxury feel for premium brands",
         style: {
@@ -76,7 +76,7 @@ export const patterns: Pattern[] = [
     {
         id: "bottom-slate-radial",
         name: "Bottom Slate Radial",
-        category: "Simple",
+        category: "simple",
         label: "New",
         description: "Sophisticated slate from bottom - clean and professional",
         style: {
