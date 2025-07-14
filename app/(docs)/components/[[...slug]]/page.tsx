@@ -25,7 +25,7 @@ export default async function ComponentDocPage(props: DocPageProps) {
   const doc = await getDocFromParams(props);
 
   const toc = await getToc(doc?.body.raw ?? "");
-  console.log("toc ", toc)
+  // console.log("toc ", toc)
   
   
 

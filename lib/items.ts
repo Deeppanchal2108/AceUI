@@ -5,12 +5,12 @@
          items: [
              {
                  title: "Introduction",
-                 href: `/components/globe`,
+                 href: `/components/introduction`,
                  label: "",
                  items: [],
              },  {
                  title: "Installation",
-                 href: `/components/globe`,
+                 href: `/components/installation`,
                  label: "",
                  items: [],
               }
@@ -24,7 +24,7 @@
          items: [
              {
                  title: "Text Scramble",
-                 href: `/components/globe`,
+                 href: `/components/text-scramble`,
                  label:"New",
                  items: [],
              }
