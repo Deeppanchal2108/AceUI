@@ -5,12 +5,12 @@
          items: [
              {
                  title: "Introduction",
-                 href: `/components/introduction`,
+                 href: `/introduction`,
                  label: "",
                  items: [],
              },  {
                  title: "Installation",
-                 href: `/components/installation`,
+                 href: `components/installation`,
                  label: "",
                  items: [],
               }
