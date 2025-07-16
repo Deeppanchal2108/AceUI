@@ -52,12 +52,12 @@ function ShowPattern({ pattern, setPattern }: PatternProps) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 px-20 py-10">
               {filteredPattern.map((p) => (
                 <div key={p.id} className="group relative">
                   <div
                     className={`relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-background shadow-sm transition-all duration-300
-                    ring-2 ring-primary ring-offset-2`}
+                    ring-2 ring-primary ring-offset-2 border-0`}
                   >
                     {/* Pattern style */}
                     <div className="absolute inset-0" style={p.style} />

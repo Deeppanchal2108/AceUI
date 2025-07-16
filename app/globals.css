@@ -76,6 +76,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --animate-shiny-text: shiny-text 8s infinite;;
 }
 
 .dark {
@@ -136,3 +137,20 @@
   mask-size: cover;
   -webkit-mask-size: cover;
 }
+
+
+
+
+ @keyframes shiny-text {
+
+   0%,
+   90%,
+   100% {
+     background-position: calc(-100% - var(--shiny-width)) 0;
+   }
+
+   30%,
+   60% {
+     background-position: calc(100% + var(--shiny-width)) 0;
+   }
+ }

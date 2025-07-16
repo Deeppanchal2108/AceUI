@@ -15,9 +15,9 @@ import { usePathname } from "next/navigation"
 import Link from "next/link"
 export function AppSidebar() {
     const path = usePathname()
-
+console.log("Here is  the path : ", path )
     return (
-        <Sidebar className="h-screen w-56 pt-16 flex flex-col bg-black">
+        <Sidebar className="h-screen w-56 pt-16 flex flex-col bg-black border-gray-500 ">
             <SidebarContent className="bg-black text-white">
                 <SidebarGroup>
                     {sidebar.map((i, index) => (

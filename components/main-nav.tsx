@@ -5,7 +5,7 @@ import Link from 'next/link'
 async function Navbar() {
     
     return (
-        <div className='min-w-full h-16 top-0 border-b bg-black m-0 z-40  text-white'>
+        <div className='min-w-full h-16 top-0 bg-black/80 backdrop-blur-md border-b border-gray-500 m-0 z-40  text-white'>
             <div className='flex justify-around h-16 items-center '>
 
                 <div className='flex items-center'>

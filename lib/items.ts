@@ -10,7 +10,7 @@
                  items: [],
              },  {
                  title: "Installation",
-                 href: `components/installation`,
+                 href: `/components/installation`,
                  label: "",
                  items: [],
               }

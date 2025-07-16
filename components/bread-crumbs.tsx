@@ -6,7 +6,7 @@ function Breadcrumbs({ componentName }: { componentName: string }) {
       <nav className="text-sm text-gray-400 ">
           <ol className="list-reset flex">
               <li>
-                  <Link href="/" className="hover:text-white">Documentation</Link>
+                  <Link href="/introduction" className="hover:text-white">Documentation</Link>
                   <span className="mx-2">{'>'}</span>
               </li>
               {
