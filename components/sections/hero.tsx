@@ -1,6 +1,6 @@
 import React from 'react'
-
-
+import Link from 'next/link';
+import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 
 import { cn } from "@/lib/utils";
@@ -35,11 +35,18 @@ function Hero() {
               <span>Ace your frontend with sleek </span><br/>
                   <span> production-ready components</span>
           </h1>
-          <h4 className=' font-pop  text-white text-sm md:text-md font-semibold leading-tighter text-center  tracking-tight mb-4'>
-              <span> Redefined UI building for developers. Quickly add components, themes,</span>
-              <span> and responsive layouts to your app at any scale.</span>
+          <h4 className=' font-pop  text-white text-md md:text-lg  text-center  tracking-tight mb-4 leading-tight  '>
+              <div className=' text-gray-300'> Redefined UI building for developers. Quickly add
+                  
+                  <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}> components</Link></span> , <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/backgrounds"}>themes</Link></span>, and <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/"}>responsive</Link></span> </div>
+              <div className=' text-gray-300'> <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/"}> layouts</Link> </span>  to your app at any scale — built with modern CSS and Tailwind, ready to elevate any project.</div>
+           
              
           </h4>
+          <div className='flex flex-row gap-3'>
+              <Button className='bg-white text-black hover:bg-white hover:text-black font-jost text-md font-medium'>Get Started </Button>
+              <Button>Browse Components </Button>
+          </div>
     </div>
   )
 }
