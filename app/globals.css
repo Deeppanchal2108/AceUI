@@ -154,3 +154,9 @@
      background-position: calc(100% + var(--shiny-width)) 0;
    }
  }
+
+
+ .banner{
+   background-image: url('/background-optimized.jpg');
+  
+ }

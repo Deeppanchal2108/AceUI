@@ -3,8 +3,11 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 
+import { CheckIcon, ChevronRightIcon } from "lucide-react";
+import { AnimatedSubscribeButton } from "@/components/magicui/animated-subscribe-button";
 import { cn } from "@/lib/utils";
 import { AnimatedShinyText } from '../magicui/animated-shiny-text';
+import { motion } from "motion/react"
 
 export function AnimatedShinyTextDemo() {
     return (
@@ -27,6 +30,22 @@ export function AnimatedShinyTextDemo() {
     );
 }
 
+
+export function AnimatedSubscribeButtonDemo() {
+    return (
+        <AnimatedSubscribeButton className="w-50">
+            <span className="group inline-flex items-center text-sm  font-jost ">
+                Browse Components
+                <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
+            <span className="group inline-flex items-center text-sm  font-jost ">
+                Browse Components
+                <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
+        </AnimatedSubscribeButton>
+    );
+}
+
 function Hero() {
   return (
       <div className='text-white w-full mt-22 flex justify-center items-center flex-col'>
@@ -44,9 +63,12 @@ function Hero() {
              
           </h4>
           <div className='flex flex-row gap-3'>
-              <Button className='bg-white text-black hover:bg-white hover:text-black font-jost text-md font-medium'>Get Started </Button>
-              <Button>Browse Components </Button>
+              <Button className='bg-white text-black hover:bg-white hover:text-black text-[15px] font-md font-pop'>Get Started </Button>
+             <AnimatedSubscribeButtonDemo/>
+              
           </div>
+
+          
     </div>
   )
 }
