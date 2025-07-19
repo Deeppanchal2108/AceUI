@@ -1,11 +1,13 @@
 import React from 'react'
 import Hero from '@/components/sections/hero'
 import BannerSection from '@/components/sections/banner-section'
+import PreFooter from '@/components/sections/pre-footer'
 function page() {
   return (
-    <div>
+    <div  className='bg-black'>
       <Hero />
-      <BannerSection/>
+      <BannerSection />
+      <PreFooter/>
       
     </div>
   )
