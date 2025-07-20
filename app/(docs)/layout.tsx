@@ -6,11 +6,11 @@ import { AppSidebar } from '@/components/side-bar'
 
 function layout({ children }: { children: React.ReactNode }) {
     return (
-        <div>
+        <div className=''>
           
         <SidebarProvider>
 
-            <div className="min-h-screen  text-white flex flex-row">
+            <div className="min-h-screen  text-white flex flex-row ">
 
 
 
