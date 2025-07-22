@@ -29,27 +29,28 @@ export default async function ComponentDocPage(props: DocPageProps) {
   }
 
   return (
-    <div className="relative min-h-screen w-full text-white ">
-      <div className="flex flex-row w-full h-screen">
-        <div className="flex-1 overflow-y-auto">
-          <div className="relative z-10 w-full py-5 px-4 sm:px-6 lg:px-8">
+    <div className="relative w-full text-white">
+      <div className="flex flex-row w-full max-w-full">
+        <div className="flex-1 min-w-0">
+          <div className="w-full py-5 px-4 sm:px-6 lg:px-8">
             <div className="mt-3 mb-6 sm:mb-8">
               <Breadcrumbs componentName={doc.title} />
             </div>
-
             <h1 className="text-3xl sm:text-4xl font-bold">{doc.title}</h1>
-
             <p className="text-gray-400 mt-2 text-base sm:text-lg">{doc.description}</p>
-
             <div className="prose prose-invert mt-6 mb-16 max-w-none">
               <Mdx code={doc.body.code} />
             </div>
           </div>
-
         </div>
+
         {toc.length !== 0 && (
-          <div className="flex-shrink-0 w-64 border-l border-border text-sm hidden xl:block">
-            <TableOfContents toc={toc} />
+          <div className="w-64 flex-shrink-0 hidden xl:block relative">
+            <div className="fixed top-4 w-64 h-[calc(100vh-2rem)] border-l border-border text-sm bg-black mt-8">
+              <div className="h-full overflow-y-auto p-4">
+                <TableOfContents toc={toc} />
+              </div>
+            </div>
           </div>
         )}
       </div>
