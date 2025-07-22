@@ -36,7 +36,7 @@ const testimonials = [
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-[20rem] rounded-md flex flex-col antialiased  items-center justify-center relative z mb-2">
+    <div className="h-[24rem] pb-6 rounded-md flex flex-col antialiased items-center justify-center relative z mb-10">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
@@ -67,8 +67,8 @@ function ScrollSection() {
         In just a few lines of code.
       </TextReveal>
 
-      <InfiniteMovingCardsDemo/>
-      
+      <InfiniteMovingCardsDemo />
+
     </div>
   )
 }

@@ -12,7 +12,7 @@ function CopyCode({ children }: CopyCodeProps) {
     const codeRef = useRef<HTMLPreElement>(null);
 
     const [code, setCode] = useState<string>("");
-  
+
 
     const handleCopy = () => {
         const text = codeRef.current?.innerText || '';
@@ -20,15 +20,15 @@ function CopyCode({ children }: CopyCodeProps) {
         navigator.clipboard.writeText(text);
         setCopied(true);
 
-        
+
         setTimeout(() => {
             setCopied(false)
         }, 900);
     };
 
-   
 
-    
+
+
 
     return (
         <div className="relative group ">
