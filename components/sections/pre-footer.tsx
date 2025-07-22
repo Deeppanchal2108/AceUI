@@ -20,34 +20,40 @@ export function AnimatedGridPatternDemo() {
     )
 }
 
+
+
+
 export function AnimatedSubscribeButtonDemo() {
     return (
-        <AnimatedSubscribeButton className="w-50">
-            <span className="group inline-flex items-center text-sm  font-jost ">
+        <AnimatedSubscribeButton className="w-full max-w-[160px] sm:max-w-[250px] md:max-w-[250px] ">
+            <span className="group inline-flex items-center text-xs sm:text-sm md:text-base font-jost">
                 Connect with me 
-                <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <ChevronRightIcon className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
-            <span className="group inline-flex items-center text-sm  font-jost ">
+            <span className="group inline-flex items-center text-xs sm:text-sm md:text-base font-jost">
                 Connect with me 
-                <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <ChevronRightIcon className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
         </AnimatedSubscribeButton>
     );
 }
+
 function PreFooter() {
     return (
-        <div className="my-20  h-[300px] w-full">
+        <div className="my-20  h-[300px] w-full flex justify-center items-center flex-col ">
             <AnimatedGridPatternDemo />
 
-            <h1 className='  font-jost pt-14 text-white text-3xl md:text-5xl font-semibold leading-tighter text-center  tracking-tight mb-4 text-white relative flex flex-col justify-center items-center'>
-                <span> Where beautiful UIs begin </span><br />
-                <span> Start Today</span>
+
+            <h1 className="font-jost pt-10 sm:pt-14 text-white text-2xl sm:text-4xl md:text-5xl font-semibold leading-snug sm:leading-tight text-center tracking-tight mb-6 relative flex flex-col justify-center items-center">
+                <span>Where beautiful UIs begin</span>
+                <span className="">Start Today</span>
             </h1>
+
             
             <div className='flex flex-row gap-3 relative flex justify-center '>
                 <AnimatedSubscribeButtonDemo />
 
-                <Button className='bg-white text-black hover:bg-white hover:text-black text-[15px] font-md font-pop'>Read the docs  </Button>
+                <Button className='bg-white text-black hover:bg-white hover:text-black text-[13px] md:text-[15px] font-md font-pop'>Read the docs  </Button>
                
             </div>
         </div>

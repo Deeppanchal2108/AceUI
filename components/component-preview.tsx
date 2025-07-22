@@ -2,11 +2,11 @@ import React from "react";
 import { componentMap } from "./component-map";
 export function ComponentPreview({ name }: { name: string }) {
     const Component = componentMap[name];
-  
+
 
     if (!Component) {
         return <div className="text-red-500">Component "{name}" not exists .</div>;
-      }
+    }
     return (
         <>
             <div className="max-w-full bg-zinc-950 min-h-[400px] mx-auto py-5 flex justify-center items-center 
@@ -21,4 +21,3 @@ export function ComponentPreview({ name }: { name: string }) {
     )
 
 }
-  

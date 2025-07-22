@@ -24,12 +24,20 @@ const icons = {
 }
 function InfoOut({ children, variant, className }: InfoOutProps) {
   return (
-      <div className={`border rounded-lg   p-4 flex my-4 items-start space-x-2 backdrop-blur-md ${variant ? variantClasses[variant] : variantClasses.info} ${className}`}>
-          <span className='text-lg mx-2'>  {icons[variant || "info"]}</span>
-        
-          <p className='text-sm'>{children}</p>
-       
+      <div
+          className={`
+    border rounded-lg p-4 flex flex-col sm:flex-row my-4 items-start sm:items-center
+    space-y-2 sm:space-y-0 sm:space-x-3 backdrop-blur-md
+    ${variant ? variantClasses[variant] : variantClasses.info} ${className}
+  `}
+      >
+          <span className="text-xl sm:text-lg mx-1 sm:mx-2">
+              {icons[variant || "info"]}
+          </span>
+
+          <p className="text-sm sm:text-base">{children}</p>
       </div>
+
   )
 }
 

@@ -51,12 +51,22 @@ import { TextReveal } from "@/components/magicui/text-reveal";
 function ScrollSection() {
   return (
     <div className='w-full flex justify-center items-center text-center flex-col'>
-      <TextReveal className='font-pop text-white text-2xl md:text-4xl font-semibold leading-tighter text-center tracking-tight max-w-[560px] '>
-        
+      <TextReveal className="
+  font-pop 
+  text-white 
+  text-xl sm:text-2xl md:text-4xl 
+  font-semibold 
+  leading-snug sm:leading-tight md:leading-tighter 
+  text-center 
+  tracking-tight 
+  max-w-[90%] sm:max-w-[520px] md:max-w-[560px] 
+  mx-auto
+">
         Power the UI
         behind exceptional products.
         In just a few lines of code.
       </TextReveal>
+
       <InfiniteMovingCardsDemo/>
       
     </div>

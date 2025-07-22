@@ -32,18 +32,22 @@ export default async function ComponentDocPage(props: DocPageProps) {
     <div className="relative min-h-screen w-full text-white ">
       <div className="flex flex-row w-full h-screen">
         <div className="flex-1 overflow-y-auto">
-          <div className="relative z-10 max-w-3xl mx-auto py-5 px-6">
-            <div className="mt-3 mb-7">
+          <div className="relative z-10 max-w-3xl mx-auto py-5 px-4 sm:px-6 lg:px-8">
+            <div className="mt-3 mb-6 sm:mb-8">
               <Breadcrumbs componentName={doc.title} />
             </div>
-            <h1 className="text-4xl font-bold">{doc.title}</h1>
-            <p className="text-gray-400">{doc.description}</p>
-            <div className="prose prose-invert mt-6 mb-16">
+
+            <h1 className="text-3xl sm:text-4xl font-bold">{doc.title}</h1>
+
+            <p className="text-gray-400 mt-2 text-base sm:text-lg">{doc.description}</p>
+
+            <div className="prose prose-invert mt-6 mb-16 max-w-none">
               <Mdx code={doc.body.code} />
             </div>
           </div>
+
         </div>
-        {toc && (
+        {toc.length !== 0 && (
           <div className="flex-shrink-0 w-64 border-l border-border text-sm hidden xl:block">
             <TableOfContents toc={toc} />
           </div>
