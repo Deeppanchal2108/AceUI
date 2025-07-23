@@ -5,6 +5,7 @@ import remarkParse from "remark-parse";
 import remarkMdx from "remark-mdx";
 import { visit } from "unist-util-visit";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 function extractSections(markdown: string) {
@@ -54,7 +55,12 @@ const docs = defineCollection({
                         },
                     },
                 ],
-              ],
+                
+            ],
+            remarkPlugins: [
+                remarkGfm, 
+            ],
+           
         });
 
         return {

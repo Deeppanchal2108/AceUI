@@ -10,33 +10,29 @@ interface CopyCodeProps {
 function CopyCode({ children }: CopyCodeProps) {
     const [copied, setCopied] = useState(false);
     const codeRef = useRef<HTMLPreElement>(null);
-
     const [code, setCode] = useState<string>("");
 
-
     const handleCopy = () => {
-        const text = codeRef.current?.innerText || '';
+        const text = codeRef.current?.innerText || "";
         setCode(text);
         navigator.clipboard.writeText(text);
         setCopied(true);
-
-
         setTimeout(() => {
-            setCopied(false)
+            setCopied(false);
         }, 900);
     };
 
-
-
-
-
     return (
-        <div className="relative group ">
+        <div className="w-[310px] mx-auto sm:w-full relative group rounded-lg overflow-x-auto">
             <button
                 onClick={handleCopy}
-                className="absolute top-2 right-2 z-10  text-white px-2 py-1 text-xs "
+                className="absolute top-2 right-2 z-10 text-white px-2 py-1 text-xs"
             >
-                {copied ? <Check className="transition-opacity duration-300" /> : <Copy className="transition-opacity duration-300" />}
+                {copied ? (
+                    <Check className="transition-opacity duration-300" />
+                ) : (
+                    <Copy className="transition-opacity duration-300" />
+                )}
             </button>
 
             <pre

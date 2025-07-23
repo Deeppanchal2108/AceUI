@@ -1,8 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useMDXComponent } from "@content-collections/mdx/react"; // OR "@mdx-js/react" depending
-// import * as UI from "../components/ui";
- import { ComponentPreview } from "@/components/component-preview";
+import { useMDXComponent } from "@content-collections/mdx/react";
+import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import InfoOut from "./info-out";
 import CopyCode from "./copy-code";
@@ -20,59 +19,69 @@ import {
 
 
 const components = {
-ComponentPreview,
+    ComponentPreview,
     ComponentSource,
     InfoOut,
     CopyCode,
-    Table: ({ className, ...props }: React.ComponentProps<typeof Table>) => (
-        <Table
-            className={cn("w-full text-sm text-gray-100 bg-zinc-900  border-zinc-700 rounded-lg overflow-hidden shadow-sm", className)}
-            {...props}
-        />
+  Table: ({ className, ...props }: React.ComponentProps<typeof Table>) => (
+      <div className="w-full  overflow-x-auto rounded-lg">
+          <div className="w-[310px] sm:w-full mx-auto ">
+      <Table
+        className={cn(
+          "w-full text-sm text-gray-100 rounded-lg bg-zinc-900 border-zinc-700 overflow-hidden shadow-sm",
+          className
+        )}
+        {...props}
+      />
+    </div>
+  </div>
+),
 
-    ),
+
+
     TableBody: ({ className, ...props }: React.ComponentProps<typeof TableBody>) => (
         <TableBody
             className={cn("divide-y divide-zinc-700", className)}
             {...props}
         />
-
     ),
+
     TableCaption: ({ className, ...props }: React.ComponentProps<typeof TableCaption>) => (
         <TableCaption
             className={cn("text-gray-400 text-sm py-2", className)}
             {...props}
         />
-
     ),
+
     TableCell: ({ className, ...props }: React.ComponentProps<typeof TableCell>) => (
         <TableCell
             className={cn("px-4 py-3 text-sm text-gray-200", className)}
             {...props}
         />
-
     ),
+
     TableHead: ({ className, ...props }: React.ComponentProps<typeof TableHead>) => (
         <TableHead
             className={cn("px-4 py-2 text-left font-semibold text-gray-200 text-sm", className)}
             {...props}
         />
-
     ),
+
     TableHeader: ({ className, ...props }: React.ComponentProps<typeof TableHeader>) => (
         <TableHeader
             className={cn("bg-zinc-800", className)}
             {...props}
         />
-
     ),
+
     TableRow: ({ className, ...props }: React.ComponentProps<typeof TableRow>) => (
         <TableRow
             className={cn("transition-colors hover:bg-zinc-700 odd:bg-zinc-900 even:bg-zinc-800", className)}
             {...props}
         />
-
     ),
+
+
     pre: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <pre
             className={cn(" bg-zinc-800 z-10 overflow-x-auto scroll-auto p-2 rounded-sm   text-white ", className)}
@@ -80,7 +89,7 @@ ComponentPreview,
         />
 
     ),
- Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
+    Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
         <Tabs
             className={cn("relative mt-6 w-full overflow-x-auto", className)}
             {...props}
@@ -122,15 +131,15 @@ ComponentPreview,
             )}
             {...props}
         />
-        ),
-    h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    ),
+    h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h1 className={cn("font-heading mt-2 scroll-m-20 text-4xl font-bold", className)}
-        
+
 
             {...props}
-            
-       />
-    },
+
+        />
+    ),
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h2
             className={cn(
@@ -187,11 +196,24 @@ ComponentPreview,
     ),
     Steps: ({ ...props }) => (
         <div
-            className="[&>h3]:step steps mb-12 ml-4 pl-8 [counter-reset:step] relative before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/50 before:to-transparent"
+            className="[&>h3]:step steps mb-12 relative
+                   sm:ml-4 sm:pl-8 
+                   sm:[counter-reset:step] 
+                   sm:before:absolute 
+                   sm:before:left-0 
+                   sm:before:top-0 
+                   sm:before:h-full 
+                   sm:before:w-px 
+                   sm:before:bg-gradient-to-b 
+                   sm:before:from-transparent 
+                   sm:before:via-muted-foreground/50 
+                   sm:before:to-transparent"
             {...props}
         />
-      ),
-   
+    ),
+
+
+
     p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
         <p
             className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
@@ -247,11 +269,15 @@ ComponentPreview,
             )}
             {...props}
         />
-      ),
+    ),
+
 
 };
 
-export function Mdx({ code }: { code: string }) {
+export function Mdx({ code, className }: { code: string, className?: string; }) {
     const Component = useMDXComponent(code);
-    return <Component components={components} />;
+    return (<article className={cn("mx-auto max-w-[120ch] px-4 sm:px-6 lg:px-8", className)}>
+
+        <Component components={components} />
+    </article>);
 }

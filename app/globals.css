@@ -170,3 +170,8 @@
      }
    }
  }
+
+
+ body {
+   overflow-x: hidden;
+ }
