@@ -1,65 +1,104 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
-import { LogOut, CircleUser, Bell, Home, UsersRound, SquarePen, Menu, X } from 'lucide-react';
+import {  Menu } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from './ui/button';
+import { sidebar } from "@/lib/items"
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+    Sidebar,
+    SidebarContent,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarGroupLabel,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+} from "@/components/ui/sidebar"
+import { usePathname } from "next/navigation"
+
 function MobileNavbar() {
-    
+    const path = usePathname()
+    // console.log("Here is  the path : ", path)
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className='md:hidden fixed top-0 left-0 right-0 z-50 bg-black border-b'>
-            <div className='flex justify-between items-center p-4'>
-                <div className='flex items-center'>
-                    <Link href={"/"} className='text-xl lg:text-2xl font-mono tracking-tighter text-primary font-bold'>
-                        HiveMind
-                    </Link>
-                </div>
-                <button onClick={() => setIsOpen(!isOpen)} className="p-2 hover:bg-gray-100 rounded-full">
-                    <Menu className='w-6 h-6' />
-                </button>
-            </div>
-            {isOpen && (
-                <div className='fixed inset-0 bg-white z-50'>
-                    <div className='flex flex-col h-full'>
-                        <div className='flex justify-between items-center p-4 border-b'>
-                            <div className='flex items-center'>
-                                <Link href={"/"} className='text-xl lg:text-2xl font-mono tracking-tighter text-primary font-bold'>
-                                    HiveMind
-                                </Link>
-                            </div>
-                            <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-gray-100 rounded-full">
-                                <X className='w-6 h-6' />
-                            </button>
-                        </div>
-
-                        <div className='flex-1 overflow-y-auto p-4'>
-                            <nav className='flex flex-col space-y-2'>
-                                <Link href="/" onClick={() => setIsOpen(false)}>
-                                    <Button variant="ghost" className='w-full justify-start gap-2'>
-                                        <Home size={20} /> Home
-                                    </Button>
-                                </Link>
-                                <Link href="/spaces" onClick={() => setIsOpen(false)}>
-                                    <Button variant="ghost" className='w-full justify-start gap-2'>
-                                        <UsersRound size={20} /> Spaces
-                                    </Button>
-                                </Link>
-                                <Link href="/new-story" onClick={() => setIsOpen(false)}>
-                                    <Button variant="ghost" className='w-full justify-start gap-2'>
-                                        <SquarePen size={20} /> Write
-                                    </Button>
-                                </Link>
-
-                               
-                            </nav>
-                        </div>
-
-                       
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <div className='md:hidden fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-500 m-0 text-white'>
+                <div className='flex justify-between items-center p-4'>
+                    <div className='flex items-center'>
+                        <Link href="/" className='text-xl lg:text-2xl text-white font-mono tracking-tighter font-bold'>
+                            AceUi
+                        </Link>
                     </div>
+                    <SheetTrigger asChild>
+                        <button className="p-2  rounded-full">
+                            <Menu className='w-6 h-6' />
+                        </button>
+                    </SheetTrigger>
                 </div>
-            )}
-        </div>
+            </div>
+
+            <SheetContent side="left" className="w-64 bg-black text-white border-r border-gray-500">
+                <SheetHeader>
+                    <SheetTitle > <Link href="/" className='text-xl lg:text-2xl text-white font-mono tracking-tighter font-bold'>
+                        AceUi
+                    </Link></SheetTitle>
+
+                </SheetHeader>
+
+                <SidebarGroup>
+                    {sidebar.map((i, index) => (
+                        <div key={index}>
+
+                            <SidebarGroupLabel className="text-sm tracking-wide font-dmsans text-white font-bold pl-4 pr-2">
+                                {i.title}
+                            </SidebarGroupLabel>
+
+                            <SidebarGroupContent>
+                                <SidebarMenu className="flex flex-col ">
+                                    {i.items.map((item) => (
+                                        <SidebarMenuItem key={item.title}>
+                                            <SidebarMenuButton asChild className="w-full">
+                                                <Link
+                                                    href={item.href}
+                                                    onClick={() => setIsOpen(false)}
+                                                    className={`*:block w-full text-sm font-dmsans text-white font-medium px-4 text-left 
+    hover:bg-transparent hover:shadow-none hover:text-white 
+    transition-colors duration-300 
+    focus:outline-none focus:ring-0 focus:bg-transparent 
+    active:bg-transparent active:text-white
+    visited:text-white
+    ${path === item.href
+                                                            ? "rounded-none bg-gradient-to-r from-[#1a1a1a] via-[#0f0f0f] to-black border-l-3 border-white shadow-lg"
+                                                            : ""}`}
+                                                >
+                                                    {item.title}
+
+                                                    {item.label ? (
+                                                        <span className="ml-2 inline-block rounded-full bg-green-500 px-2 py-0.5 text-xs font-semibold text-white">
+                                                            New
+                                                        </span>
+                                                    ) : ""}
+                                                </Link>
+
+                                            </SidebarMenuButton>
+                                        </SidebarMenuItem>
+                                    ))}
+                                </SidebarMenu>
+                            </SidebarGroupContent>
+                        </div>
+                    ))}
+                </SidebarGroup>
+
+            </SheetContent>
+        </Sheet>
     );
 }
 

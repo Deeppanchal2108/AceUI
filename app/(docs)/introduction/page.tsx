@@ -10,7 +10,7 @@ function Page() {
   return (
     <div className="min-h-screen w-full  text-white">
       <div className="flex justify-center w-full px-4">
-        <div className="max-w-2xl w-full py-10">
+        <div className="max-w-5xl w-full py-10">
           <h1 className="text-3xl font-bold mb-6">Introduction</h1>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>

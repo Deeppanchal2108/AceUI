@@ -2,6 +2,9 @@ import React from 'react'
 import MobileNavbar from './mobile-nav'
 import DesktopNavbar from './desktop-nav'
 import Link from 'next/link'
+import {
+    SidebarProvider
+} from './ui/sidebar'
 async function Navbar() {
     
     return (
@@ -9,12 +12,14 @@ async function Navbar() {
             <div className='flex justify-around h-16 items-center '>
 
                 <div className='flex items-center'>
-                    <Link href={"/"} className=' text-xl lg:text-2xl  text-white font-mono tracking-tighter  font-bold '>
+                    <Link href={"/"} className=' text-xl lg:text-2xl  text-white font-mono tracking-tighter  font-bold  hidden sm:block'>
                         AceUi</Link>
                 </div>
                 <div className='flex items-center'>
                     <DesktopNavbar />
-                    <MobileNavbar />
+                    <SidebarProvider>
+                        <MobileNavbar />
+                    </SidebarProvider>
                 </div>
             </div>
 
