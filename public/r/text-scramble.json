@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "text-scramble",
+    "type": "registry:ui",
+    "title": "Text Scramble",
+    "description": "A component that scrambles text with a typewriter effect.",
+    "files": [
+        {
+            "path": "components/ace-ui/text-scramble.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/text-scramble.tsx",
+            "content": "// components/ui/text-scramble.tsx\n\"use client\";\n\nimport React, { useEffect, useRef, useState } from \"react\";\n\ninterface TextScrambleProps {\n  children: string;\n  speed?: number;\n  duration?: number;\n  className?: string;\n}\n\nconst CHARS = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*\";\n\nexport const TextScramble: React.FC<TextScrambleProps> = ({\n  children = \"Scramble Me!\",\n  speed = 50,\n  duration = 1000,\n  className = \"\",\n}) => {\n  const [displayText, setDisplayText] = useState(children);\n  const originalTextRef = useRef(children);\n  const timeoutRef = useRef<NodeJS.Timeout | null>(null);\n\n  const scramble = () => {\n    const original = originalTextRef.current;\n    const iterations = Math.floor(duration / speed);\n    let currentIteration = 0;\n\n    const scrambleStep = () => {\n      const newText = original\n        .split(\"\")\n        .map((char) => {\n          if (Math.random() < currentIteration / iterations) {\n            return char;\n          }\n          return CHARS[Math.floor(Math.random() * CHARS.length)];\n        })\n        .join(\"\");\n\n      setDisplayText(newText);\n      currentIteration++;\n\n      if (currentIteration < iterations) {\n        timeoutRef.current = setTimeout(scrambleStep, speed);\n      } else {\n        setDisplayText(original);\n      }\n    };\n\n    scrambleStep();\n  };\n\n  useEffect(() => {\n    return () => {\n      if (timeoutRef.current) clearTimeout(timeoutRef.current);\n    };\n  }, []);\n\n  return (\n    <span\n      className={`cursor-pointer transition-colors font-jost font-bold \n        text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl \n        ${className}`}\n      onMouseEnter={scramble}\n    >\n      {displayText}\n    </span>\n  );\n};"
+        }
+    ]
+}

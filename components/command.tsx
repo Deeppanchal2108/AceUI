@@ -1,6 +1,5 @@
 import React from "react"
 import {
-    Command,
     CommandDialog,
     CommandEmpty,
     CommandGroup,
@@ -8,39 +7,44 @@ import {
     CommandItem,
     CommandList,
     CommandSeparator,
-    CommandShortcut,
 } from "@/components/ui/command"
 
-function CommandMenu({ open, setOpen }: { open: boolean, setOpen:(open:boolean)=>void }) {
-  
+import { sidebar } from "@/lib/items"
+import Link from "next/link"
 
-    // React.useEffect(() => {
-    //     const down = (e: KeyboardEvent) => {
-    //         if (e.key === "d" && (e.metaKey || e.ctrlKey)) {
-    //             e.preventDefault()
-    //             setOpen((open: any) => !open)
-    //         }
-    //     }
-    //     document.addEventListener("keydown", down)
-    //     return () => document.removeEventListener("keydown", down)
-    // }, [])
-
+function CommandMenu({ open, setOpen }: { open: boolean, setOpen: (open: boolean) => void }) {
     return (
-      <CommandDialog open={open}  onOpenChange={setOpen}>
-     
+        <CommandDialog
+            className="bg-zinc-950 text-white "
+            open={open}
+            onOpenChange={setOpen}
+        >
             <CommandInput placeholder="Type a command or search..." />
             <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup heading="Suggestions">
-                    <CommandItem>Calendar</CommandItem>
-                    <CommandItem>Search Emoji</CommandItem>
-                    <CommandItem>Calculator</CommandItem>
-                </CommandGroup>
+                {sidebar.map((section, idx) => (
+                    <React.Fragment key={section.title}>
+                        <CommandGroup heading={section.title}>
+                            {section.items.map((item) => (
+                                <CommandItem key={item.title} asChild>
+                                    <Link
+                                        href={item.href}
+                                        onClick={() => setOpen(false)}
+                                    >
+                                        <span>
+                                            {item.title}
+                                          
+                                        </span>
+                                    </Link>
+                                </CommandItem>
+                            ))}
+                        </CommandGroup>
+                        {idx < sidebar.length - 1 && <CommandSeparator />}
+                    </React.Fragment>
+                ))}
             </CommandList>
-           
         </CommandDialog>
-        
     )
 }
-  
+
 export default CommandMenu

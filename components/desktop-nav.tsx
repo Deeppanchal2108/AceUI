@@ -8,6 +8,17 @@ import { cn } from '@/lib/utils';
 function DesktopNavbar() {
 
     const [open, setOpen] = useState(false);
+
+    React.useEffect(() => {
+        const down = (e: KeyboardEvent) => {
+            if (e.key === "d" && (e.metaKey || e.ctrlKey)) {
+                e.preventDefault()
+                setOpen((open: any) => !open)
+            }
+        }
+        document.addEventListener("keydown", down)
+        return () => document.removeEventListener("keydown", down)
+    }, [])
     return (
         <div className='hidden md:block'>
             {
@@ -47,11 +58,11 @@ function DesktopNavbar() {
                         >
                             <span className="hidden lg:inline-flex text-sm  ">Search documentation...</span>
                             <span className="inline-flex lg:hidden text-sm">Search...</span>
-                            <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border  px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex bg-gray-950 hover:bg-gray-950 ">
-                                <span className="text-xs">⌘</span>K
+                            <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border  px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex bg-neutral-950 hover:bg-neutral-950 ">
+                                <span className="text-xs">⌘</span>D
                             </kbd>
                         </Button>
-                        <CommandMenu open={open} setOpen={setOpen} />
+                        <CommandMenu  open={open} setOpen={setOpen} />
 
                     </div>
 
