@@ -5,7 +5,7 @@ export function ComponentPreview({ name }: { name: string }) {
 
 
     if (!Component) {
-        return <div className="text-red-500">Component "{name}" not exists .</div>;
+        return <div className="text-red-500">Component {name} not exists .</div>;
     }
     return (
         <>

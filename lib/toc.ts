@@ -1,4 +1,4 @@
-import { toc } from "mdast-util-toc";
+
 import { remark } from "remark";
 import { visit } from "unist-util-visit";
 import {toString} from "mdast-util-to-string";

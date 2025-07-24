@@ -6,14 +6,13 @@ import { sidebar } from "@/lib/items"
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
+
     SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
 import {
-    Sidebar,
-    SidebarContent,
+    
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,

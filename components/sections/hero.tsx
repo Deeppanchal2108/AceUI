@@ -3,11 +3,10 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 
-import { CheckIcon, ChevronRightIcon } from "lucide-react";
+import {  ChevronRightIcon } from "lucide-react";
 import { AnimatedSubscribeButton } from "@/components/magicui/animated-subscribe-button";
 import { cn } from "@/lib/utils";
 import { AnimatedShinyText } from '../magicui/animated-shiny-text';
-import { motion } from "motion/react"
 
 export function AnimatedShinyTextDemo() {
     return (
@@ -20,7 +19,7 @@ export function AnimatedShinyTextDemo() {
                 <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-200 hover:duration-300 text-white hover:dark:text-neutral-300">
 
                     <span className="text-sm font-semibold tracking-normal">
-                        ✨ Introducing AceUi
+                        <Link href={"/components/introduction"}>✨ Introducing AceUi</Link>
                     </span>
                     <ArrowRight className="ml-2 size-5 rounded-full bg-neutral-800 p-1 text-white group-hover:translate-x-0.5 transition-transform duration-300 ease-in-out" />
                 </AnimatedShinyText>
@@ -35,11 +34,11 @@ export function AnimatedSubscribeButtonDemo() {
     return (
         <AnimatedSubscribeButton className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[250px] ">
             <span className="group inline-flex items-center text-xs sm:text-sm md:text-base font-jost">
-                Browse Components
+                <Link href={"/components/text-scramble"}>Browse Components</Link>
                 <ChevronRightIcon className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
             <span className="group inline-flex items-center text-xs sm:text-sm md:text-base font-jost">
-                Browse Components
+                <Link href={"/components/text-scramble"}>Browse Components</Link>
                 <ChevronRightIcon className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
         </AnimatedSubscribeButton>
@@ -57,14 +56,16 @@ function Hero() {
             <h4 className=' font-pop  text-white text-md md:text-lg  text-center  tracking-tight mb-4 leading-tight  '>
                 <div className=' text-gray-300'> Redefined UI building for developers. Quickly add
 
-                    <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}> components</Link></span> , <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/backgrounds"}>themes</Link></span>, and <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/"}>responsive</Link></span> </div>
+                    <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}> components</Link></span> , <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}>themes</Link></span>, and <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}>responsive</Link></span> </div>
                 <div className=' text-gray-300'> <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/"}> layouts</Link> </span>  to your app at any scale — built with modern CSS and Tailwind, ready to elevate any project.</div>
 
 
             </h4>
             <div className='flex flex-row gap-3'>
                 <Button className='bg-white text-black hover:bg-white hover:text-black text-[13px]  
-                md:text-[15px]  font-md font-pop'>Get Started </Button>
+                md:text-[15px]  font-md font-pop'>
+                    <Link href={"/introduction"}>Get Started </Link>
+                </Button>
                 <AnimatedSubscribeButtonDemo />
 
             </div>

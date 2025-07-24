@@ -114,7 +114,7 @@ export const InfiniteMovingCards = ({
         onMouseMove={handleMouseMove}
         style={{ userSelect: "none" }}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="relative w-[300px] h-[330px] rounded-md max-w-full shrink-0 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[300px]  "
             key={item.name}

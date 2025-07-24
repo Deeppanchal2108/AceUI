@@ -5,14 +5,9 @@ import { getToc } from "@/lib/toc"
 import TableOfContents from "@/components/table-of-content"
 import Breadcrumbs from "@/components/bread-crumbs"
 
-interface DocPageProps {
-  params: {
-    slug?: string[]
-  }
-}
 
-async function getDocFromParams(props: DocPageProps) {
-  const slug = props.params.slug?.join("/") || "index"
+async function getDocFromParams(params: { slug?: string[] }) {
+  const slug = params.slug?.join("/") || "index"
   const doc = allDocs.find((doc) => {
     const slugParts = doc.slug.split("/")
     return slugParts[slugParts.length - 1] === slug
@@ -20,8 +15,9 @@ async function getDocFromParams(props: DocPageProps) {
   return doc || null
 }
 
-export default async function ComponentDocPage(props: DocPageProps) {
-  const doc = await getDocFromParams(props)
+export default async function ComponentDocPage({ params }: { params: Promise<{ slug?: string[] }> }) {
+  const resolvedParams = await params
+  const doc = await getDocFromParams(resolvedParams)
   const toc = await getToc(doc?.body.raw ?? "")
 
   if (!doc || !doc.published) {
@@ -37,7 +33,7 @@ export default async function ComponentDocPage(props: DocPageProps) {
               <Breadcrumbs componentName={doc.title} />
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold">{doc.title}</h1>
-            <p className="text-gray-400 mt-2 text-base sm:text-lg">{doc.description}</p>
+            <p className="text-gray-400 mt-2 text-base sm:text-md md:text-md">{doc.description}</p>
             <div className="prose prose-invert mt-6 mb-16 max-w-none">
               <Mdx code={doc.body.code} />
             </div>
@@ -46,7 +42,7 @@ export default async function ComponentDocPage(props: DocPageProps) {
 
         {toc.length !== 0 && (
           <div className="w-64 flex-shrink-0 hidden xl:block relative">
-            <div className="fixed top-4 w-64 h-[calc(100vh-2rem)] border-l border-border border-gray-500  text-sm bg-black mt-8">
+            <div className="fixed top-4 w-64 h-[calc(100vh-2rem)] border-l border-border border-gray-500 text-sm bg-black mt-8">
               <div className="h-full overflow-y-auto p-4">
                 <TableOfContents toc={toc} />
               </div>

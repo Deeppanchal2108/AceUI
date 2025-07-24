@@ -1,5 +1,6 @@
 import { Github } from "lucide-react"
 import { Twitter, QrCode } from "lucide-react"
+import Link from "next/link"
 function Footer() {
     return (
         <footer className="text-white w-full min-h-[200px] pl-4 sm:pl-10 md:pl-30 pb-10">
@@ -27,8 +28,8 @@ function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold mb-3 font-pop">Resources</h3>
                         <ul className="space-y-2 text-sm text-gray-300">
-                            <li className="hover:text-white transition-colors cursor-pointer">Documentation</li>
-                            <li className="hover:text-white transition-colors cursor-pointer">FAQ</li>
+                            <li className="hover:text-white transition-colors cursor-pointer"><Link href={"/components/installation"}>Documentation</Link></li>
+                            <li className="hover:text-white transition-colors cursor-pointer"><Link href={"/introduction"}>FAQ</Link></li>
                         </ul>
                     </div>
 
@@ -37,14 +38,15 @@ function Footer() {
                         <ul className="space-y-2 text-sm text-gray-300">
                             <li className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
                                 <Github size={16} />
-                                GitHub
+                                <Link href={"https://github.com/Deeppanchal2108"}>GitHub</Link>
                             </li>
                             <li className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
-                                <Twitter size={16} />X
+                                <Twitter size={16} />
+                                <Link href={"https://x.com/deepp2108"}>X</Link>
                             </li>
                             <li className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
                                 <QrCode size={16} />
-                                Website
+                                <Link href={"https://example.com"}>Website</Link>
                             </li>
                         </ul>
                     </div>

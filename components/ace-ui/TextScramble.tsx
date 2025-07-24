@@ -28,7 +28,7 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
         const scrambleStep = () => {
             const newText = original
                 .split("")
-                .map((char, i) => {
+                .map((char) => {
                     if (Math.random() < currentIteration / iterations) {
                         return char;
                     }

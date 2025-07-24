@@ -1,7 +1,6 @@
 import React from 'react'
 import { SidebarProvider } from "@/components/ui/sidebar"
 
-import Navbar from '@/components/main-nav'
 import { AppSidebar } from '@/components/side-bar'
 
 function layout({ children }: { children: React.ReactNode }) {
