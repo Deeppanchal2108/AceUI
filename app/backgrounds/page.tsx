@@ -7,11 +7,21 @@ import { Tooltip } from "@/components/ace-ui/ToolTip";
 
 import { UserCard } from "@/components/ace-ui/UserCard";
 
+import ImageText from "@/components/ace-ui/ImageText";
+
+import { FeedbackWidget } from "@/components/ace-ui/FeedbackWidget";
 function Page() {
     
-    
+
     return (
         <div className=" text-white bg-black font-sans px-4 py-10">
+            {/* <div className="fixed bottom-6 right-6 z-50">
+                <FeedbackWidget />
+            </div>
+            */}
+            {/* <div>
+                <ImageText text="AceUi"  backgroundImage="/image-text.jpg" />
+            </div> */}
 
             {/* <div className="max-w-sm mx-auto mt-10">
                 <UserCard
