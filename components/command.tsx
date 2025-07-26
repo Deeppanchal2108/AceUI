@@ -15,7 +15,7 @@ import Link from "next/link"
 function CommandMenu({ open, setOpen }: { open: boolean, setOpen: (open: boolean) => void }) {
     return (
         <CommandDialog
-            className="bg-zinc-950 text-white "
+
             open={open}
             onOpenChange={setOpen}
         >
