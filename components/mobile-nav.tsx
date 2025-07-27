@@ -68,7 +68,7 @@ function MobileNavbar() {
                                                 <Link
                                                     href={item.href}
                                                     onClick={() => setIsOpen(false)}
-                                                    className={`*:block w-full text-sm font-dmsans text-white font-medium px-4 text-left  
+                                                    className={`*:block w-full text-sm font-dmsans text-neutral-200 font-medium px-4 text-left  
     hover:bg-transparent hover:shadow-none hover:text-white 
     transition-colors duration-300 
     focus:outline-none focus:ring-0 focus:bg-transparent 
