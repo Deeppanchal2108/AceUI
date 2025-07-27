@@ -1,54 +1,53 @@
 "use client"
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Kbd } from "@/components/ace-ui/Kbd";
-import { SpotLight } from "@/components/ace-ui/SpotLight";
-import { Tooltip } from "@/components/ace-ui/ToolTip";
-import {
-    List,
-    Bookmark,
-    DollarSign,
-    Shield,
-    MessageSquare,
-    Briefcase,
-    Plus,
-    Settings,
-    MoreHorizontal,
-    User
-} from 'lucide-react';
+// import React from "react";
+// import { Button } from "@/components/ui/button";
+// import { Kbd } from "@/components/ace-ui/Kbd";
+// import { SpotLight } from "@/components/ace-ui/SpotLight";
+// import { Tooltip } from "@/components/ace-ui/ToolTip";
+// import {
+//     List,
+//     Bookmark,
+//     DollarSign,
+//     Shield,
+//     MessageSquare,
+//     Briefcase,
+//     Plus,
+//     Settings,
+//     MoreHorizontal,
+//     User
+// } from 'lucide-react';
 
 
-import { UserCard } from "@/components/ace-ui/UserCard";
+// import { UserCard } from "@/components/ace-ui/UserCard";
 
-import ImageText from "@/components/ace-ui/ImageText";
+// import ImageText from "@/components/ace-ui/ImageText";
 
-import { FeedbackWidget } from "@/components/ace-ui/FeedbackWidget";
-import {DropdownMenu} from "@/components/ace-ui/DropdownMenu";
+// import { FeedbackWidget } from "@/components/ace-ui/FeedbackWidget";
+// import {DropdownMenu} from "@/components/ace-ui/DropdownMenu";
 function Page() {
     
-    const defaultMenuItems = [
-        { icon: List, label: 'Lists', id: 'lists' },
-        { icon: Bookmark, label: 'Bookmarks', id: 'bookmarks' },
-        { icon: DollarSign, label: 'Monetization', id: 'monetization' },
-        { icon: Shield, label: 'Verified Orgs', id: 'verified' },
-        { icon: MessageSquare, label: 'Ads', id: 'ads' },
-        { icon: Briefcase, label: 'Jobs', id: 'jobs' },
-        { icon: Plus, label: 'Create your Space', id: 'create-space' },
-        { icon: Settings, label: 'Settings and privacy', id: 'settings' },
-    ];
+    // const defaultMenuItems = [
+    //     { icon: List, label: 'Lists', id: 'lists' },
+    //     { icon: Bookmark, label: 'Bookmarks', id: 'bookmarks' },
+    //     { icon: DollarSign, label: 'Monetization', id: 'monetization' },
+    //     { icon: Shield, label: 'Verified Orgs', id: 'verified' },
+    //     { icon: MessageSquare, label: 'Ads', id: 'ads' },
+    //     { icon: Briefcase, label: 'Jobs', id: 'jobs' },
+    //     { icon: Plus, label: 'Create your Space', id: 'create-space' },
+    //     { icon: Settings, label: 'Settings and privacy', id: 'settings' },
+    // ];
 
-    const customMenuItems = [
-        { icon: User, label: 'Profile', id: 'profile' },
-        { icon: Settings, label: 'Settings', id: 'settings' },
-        { icon: Briefcase, label: 'Dashboard', id: 'dashboard' },
-    ];
+    // const customMenuItems = [
+    //     { icon: User, label: 'Profile', id: 'profile' },
+    //     { icon: Settings, label: 'Settings', id: 'settings' },
+    //     { icon: Briefcase, label: 'Dashboard', id: 'dashboard' },
+    // ];
     return (
         <div className=" text-white bg-black font-sans px-4 py-10">
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
 
-                {/* Default Configuration */}
-                <div className="bg-white rounded-2xl shadow-lg p-6">
+                {/* <div className="bg-white rounded-2xl shadow-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Default Style</h3>
                     <div className="flex justify-center">
                         <DropdownMenu
@@ -56,9 +55,9 @@ function Page() {
                             buttonHref="/create-post"
                         />
                     </div>
-                </div>
+                </div> */}
 
-                <div className="bg-white rounded-2xl shadow-lg p-6">
+                {/* <div className="bg-white rounded-2xl shadow-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Disabled</h3>
                     <div className="flex justify-center">
                         <DropdownMenu
@@ -66,8 +65,8 @@ function Page() {
                             disabled={true}
                         />
                     </div>
-                </div>
-
+                </div> */}
+{/* 
                 <div className="bg-white rounded-2xl shadow-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Right Aligned</h3>
                     <div className="flex justify-end">
@@ -79,9 +78,9 @@ function Page() {
                             position="right"
                         />
                     </div>
-                </div>
+                </div> */}
 
-                <div className="bg-white rounded-2xl shadow-lg p-6">
+                {/* <div className="bg-white rounded-2xl shadow-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Compact</h3>
                     <div className="flex justify-center">
                         <DropdownMenu
@@ -93,7 +92,7 @@ function Page() {
                             itemClassName="px-4 py-3"
                         />
                     </div>
-                </div>
+                </div> */}
 
             
             </div>

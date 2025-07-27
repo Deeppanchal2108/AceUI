@@ -13,7 +13,7 @@ function DesktopNavbar() {
         const down = (e: KeyboardEvent) => {
             if (e.key === "d" && (e.metaKey || e.ctrlKey)) {
                 e.preventDefault()
-                setOpen((open: any) => !open)
+                setOpen((open: boolean) => !open)
             }
         }
         document.addEventListener("keydown", down)

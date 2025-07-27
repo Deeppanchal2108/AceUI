@@ -18,10 +18,10 @@ function Page() {
             </p>
             <p>
               <strong className="text-white">What is AceUI?</strong><br />
-              AceUI is not a traditional component library. There’s no npm install. No bloated dependencies. Just copy-paste and customize every component, layout, and background pattern is yours to tweak.
+              AceUI is not a traditional component library. There is no npm install. No bloated dependencies. Just copy-paste and customize every component, layout, and background pattern is yours to tweak.
             </p>
             <p>
-              From animated buttons and cards to handcrafted CSS patterns and gradients, AceUI gives you everything you need to bring your UI to life, whether you're building dashboards, marketing sites, or SaaS apps.
+              From animated buttons and cards to handcrafted CSS patterns and gradients, AceUI gives you everything you need to bring your UI to life, whether you are building dashboards, marketing sites, or SaaS apps.
             </p>
             <p>
               Use AceUI as a foundation to craft your own unique design system, fully in your control.

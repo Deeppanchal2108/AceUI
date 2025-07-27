@@ -2,16 +2,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { LucideIcon } from 'lucide-react';
 import {
-    List,
-    Bookmark,
-    DollarSign,
-    Shield,
-    MessageSquare,
-    Briefcase,
-    Plus,
-    Settings,
+   
     MoreHorizontal,
-    User
+    
 } from 'lucide-react';
 
 interface MenuItem {

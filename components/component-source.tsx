@@ -29,7 +29,7 @@ export function ComponentSource({ name }: ComponentSourceProps) {
                 const text = await res.text();
                 setCode(text);
             } catch (error) {
-                setCode("// Failed to load source code.");
+                setCode(`Failed to load source code: ${error}`);
             }
         };
         fetchCode();

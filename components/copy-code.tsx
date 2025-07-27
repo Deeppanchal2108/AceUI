@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Copy, Check } from "lucide-react";
 
 interface CopyCodeProps {
@@ -10,11 +10,11 @@ interface CopyCodeProps {
 function CopyCode({ children }: CopyCodeProps) {
     const [copied, setCopied] = useState(false);
     const codeRef = useRef<HTMLPreElement>(null);
-    const [code, setCode] = useState<string>("");
+    // const [code, setCode] = useState<string>("");
 
     const handleCopy = () => {
         const text = codeRef.current?.innerText || "";
-        setCode(text);
+        // setCode(text);
         navigator.clipboard.writeText(text);
         setCopied(true);
         setTimeout(() => {

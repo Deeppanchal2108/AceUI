@@ -260,7 +260,7 @@ const useFeedbackSubmission = () => {
     const [isSuccessfullySubmitted, setIsSuccessfullySubmitted] = useState(false);
 
     // Mock API call - replace with actual API endpoint
-    const mockFeedbackAPI = (data: { satisfactionLevel: number; comment: string }) =>
+    const mockFeedbackAPI = () =>
         new Promise<void>((resolve, reject) => {
             setTimeout(() => {
                 // Simulate occasional failures for testing
@@ -279,7 +279,7 @@ const useFeedbackSubmission = () => {
         setIsSuccessfullySubmitted(false);
         setSubmissionError(null);
 
-        mockFeedbackAPI(submissionData)
+        mockFeedbackAPI()
             .then(() => {
                 setIsSuccessfullySubmitted(true);
                 console.log("Feedback submitted successfully:", submissionData);

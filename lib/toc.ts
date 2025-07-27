@@ -3,6 +3,7 @@ import { remark } from "remark";
 import { visit } from "unist-util-visit";
 import {toString} from "mdast-util-to-string";
 
+import type { Heading } from "mdast";
 interface Toc {
     title : string,
     url: string
@@ -12,7 +13,7 @@ export function getToc(markdown: string): Promise<Toc[]> {
 
     const tree = remark().parse(markdown);
     const headings: Toc[] = [];
-    visit(tree, "heading", (node: any) => {
+    visit(tree, "heading", (node: Heading) => {
 
         if(node.depth === 2){
             const title = toString(node);
