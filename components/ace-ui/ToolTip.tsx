@@ -5,6 +5,7 @@
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface TooltipProps {
     children: React.ReactNode;
@@ -15,8 +16,13 @@ interface TooltipProps {
 }
 
 export function Tooltip({
-    children,
-    content,
+    children = (
+        <Button className="rounded-md bg-neutral-800 px-4 py-2 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-neutral-700 active:scale-95 sm:px-6 sm:py-2.5">
+            📋 Copy
+        </Button>
+    ),
+
+    content ="Copy to clipboard",
     side = "top",
     align = "center",
     className,

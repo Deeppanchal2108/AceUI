@@ -1,0 +1,289 @@
+---
+title: Dropdown Menu
+description: A fully customizable dropdown menu component with icons, external links, and action buttons for modern web applications.
+author: deep
+published: true
+date: 2025-07-27
+slug: components/dropdown-menu
+---
+
+<ComponentPreview name="dropdown-menu" />
+
+<InfoOut>The DropdownMenu component provides a flexible dropdown interface with icon support, customizable positioning, and action buttons - perfect for navigation menus, context menus, and user actions</InfoOut>
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+<CopyCode>
+      {`npx shadcn@latest add "https://your-registry.com/r/dropdown-menu.json"`}
+    </CopyCode>
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="dropdown-menu" />
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+<CopyCode>
+  {`import { DropdownMenu } from "@/components/dropdown-menu";
+import { Settings, User, LogOut, Plus } from "lucide-react";
+
+const menuItems = [
+  { icon: User, label: "Profile", id: "profile", href: "/profile" },
+  { icon: Settings, label: "Settings", id: "settings", href: "/settings" },
+  { icon: LogOut, label: "Sign Out", id: "signout", href: "/logout" }
+];
+
+export default function Example() {
+  return (
+    <div>
+      <DropdownMenu 
+        triggerIcon={Plus}
+        triggerText="Actions"
+        menuItems={menuItems}
+        buttonText="Create Post"
+        buttonHref="/create"
+      />
+    </div>
+  );
+}`}
+</CopyCode>
+
+## Variants
+
+<CopyCode>
+  {`// Basic dropdown
+<DropdownMenu 
+  menuItems={[
+    { icon: User, label: "Profile", id: "profile" },
+    { icon: Settings, label: "Settings", id: "settings" }
+  ]}
+/>
+
+// Custom trigger
+<DropdownMenu 
+  triggerIcon={Menu}
+  triggerText="Navigation"
+  menuItems={menuItems}
+/>
+
+// Different positions
+<DropdownMenu 
+  position="right"
+  menuItems={menuItems}
+/>
+
+<DropdownMenu 
+  position="center"
+  menuItems={menuItems}
+/>
+
+// Custom width
+<DropdownMenu 
+  width="w-96"
+  menuItems={menuItems}
+/>
+
+// External links
+<DropdownMenu 
+  menuItems={[
+    { 
+      icon: ExternalLink, 
+      label: "Documentation", 
+      id: "docs", 
+      href: "https://docs.example.com",
+      external: true 
+    }
+  ]}
+/>
+
+// Disabled items
+<DropdownMenu 
+  menuItems={[
+    { icon: User, label: "Profile", id: "profile" },
+    { icon: Settings, label: "Settings", id: "settings", disabled: true }
+  ]}
+/>
+
+// No action button
+<DropdownMenu 
+  menuItems={menuItems}
+  buttonText=""
+/>
+
+// Custom styling
+<DropdownMenu 
+  className="custom-dropdown"
+  triggerClassName="bg-blue-500 text-white hover:bg-blue-600"
+  menuClassName="shadow-xl"
+  itemClassName="hover:bg-blue-50"
+  buttonClassName="bg-green-500 hover:bg-green-600"
+  menuItems={menuItems}
+/>`}
+</CopyCode>
+
+## Features
+
+- 🎯 Click outside to close functionality
+- 🔗 Support for internal and external links
+- 📍 Flexible positioning: left, right, center
+- 🎨 Fully customizable styling with className props
+- 🚫 Disabled state support for items and trigger
+- 📱 Responsive and touch-friendly
+- ⌨️ Keyboard accessible with focus management
+- 🖼️ Icon support with Lucide React icons
+- 🔄 Smooth animations and transitions
+- ⚙️ TypeScript support with comprehensive types
+
+## Notice
+
+The component uses `window.location.href` for internal navigation. For Next.js applications, consider extending it to use `next/router` or `next/navigation` for better performance and user experience.
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>triggerIcon</code></TableCell>
+      <TableCell><code>LucideIcon</code></TableCell>
+      <TableCell><code>MoreHorizontal</code></TableCell>
+      <TableCell>Icon for the trigger button</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>triggerText</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>"More"</code></TableCell>
+      <TableCell>Text displayed on the trigger button</TableCell>
+    </TableRow>
+   
+    <TableRow>
+      <TableCell><code>menuItems</code></TableCell>
+      <TableCell><code>MenuItem[]</code></TableCell>
+      <TableCell><code>[]</code></TableCell>
+      <TableCell>Array of menu items to display</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>buttonText</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>"Post"</code></TableCell>
+      <TableCell>Text for the action button (empty string hides button)</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>buttonHref</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>"/post"</code></TableCell>
+      <TableCell>URL for the action button</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>buttonExternal</code></TableCell>
+      <TableCell><code>boolean</code></TableCell>
+      <TableCell><code>false</code></TableCell>
+      <TableCell>Whether the action button opens in new tab</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>position</code></TableCell>
+      <TableCell><code>'left' | 'right' | 'center'</code></TableCell>
+      <TableCell><code>'left'</code></TableCell>
+      <TableCell>Dropdown menu position relative to trigger</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>width</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>'w-72'</code></TableCell>
+      <TableCell>Tailwind width class for the dropdown</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>iconSize</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>'w-5 h-5'</code></TableCell>
+      <TableCell>Tailwind size classes for menu item icons</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>triggerIconSize</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>'w-5 h-5'</code></TableCell>
+      <TableCell>Tailwind size classes for trigger icon</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>disabled</code></TableCell>
+      <TableCell><code>boolean</code></TableCell>
+      <TableCell><code>false</code></TableCell>
+      <TableCell>Whether the dropdown trigger is disabled</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>className</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>''</code></TableCell>
+      <TableCell>Additional CSS classes for the container</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>triggerClassName</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>''</code></TableCell>
+      <TableCell>Additional CSS classes for the trigger button</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>menuClassName</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>''</code></TableCell>
+      <TableCell>Additional CSS classes for the dropdown menu</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>itemClassName</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>''</code></TableCell>
+      <TableCell>Additional CSS classes for menu items</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>buttonClassName</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>''</code></TableCell>
+      <TableCell>Additional CSS classes for the action button</TableCell>
+    </TableRow>
+    
+  </TableBody>
+</Table>
+
+## MenuItem Interface
+
+<CopyCode>
+  {`interface MenuItem {
+    icon: LucideIcon;     // Lucide React icon component
+    label: string;        // Display text for the menu item
+    id: string;          // Unique identifier
+    href?: string;       // Optional URL to navigate to
+    external?: boolean;  // Whether to open link in new tab
+    disabled?: boolean;  // Whether the item is disabled
+}`}
+</CopyCode>

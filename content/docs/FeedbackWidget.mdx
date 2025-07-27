@@ -1,0 +1,237 @@
+---
+title: Feedback Widget
+description: An interactive feedback widget with emoji ratings, expandable comment form, and smooth animations for collecting user satisfaction data.
+author: deep
+published: true
+date: 2025-07-27
+slug: components/feedback-widget
+---
+
+<ComponentPreview name="feedback-widget" />
+
+<InfoOut>The FeedbackWidget component provides an elegant way to collect user feedback with emoji-based satisfaction ratings, optional comments, and beautiful animations powered by Framer Motion</InfoOut>
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+<CopyCode>
+      {`npx shadcn@latest add "https://your-registry.com/r/feedback-widget.json"`}
+    </CopyCode>
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Install the required dependencies:</Step>
+<CopyCode>
+{`npm install framer-motion lucide-react`}
+</CopyCode>
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="feedback-widget" />
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+<CopyCode>
+  {`import { FeedbackWidget } from "@/components/feedback-widget";
+
+export default function Example() {
+  return (
+    <div className="p-8">
+      <FeedbackWidget />
+    </div>
+  );
+}`}
+</CopyCode>
+
+## Variants
+
+<CopyCode>
+  {`// Basic usage
+<FeedbackWidget />
+
+// In a fixed position (bottom right corner)
+<div className="fixed bottom-4 right-4 z-50">
+  <FeedbackWidget />
+</div>
+
+// In a modal or dialog
+<Dialog>
+  <DialogContent>
+    <div className="p-6">
+      <h2 className="text-lg font-semibold mb-4">How was your experience?</h2>
+      <FeedbackWidget />
+    </div>
+  </DialogContent>
+</Dialog>
+
+// After completing an action
+<div className="space-y-4">
+  <div className="p-4 bg-green-50 rounded-lg">
+    <p className="text-green-800">Task completed successfully!</p>
+  </div>
+  <FeedbackWidget />
+</div>`}
+</CopyCode>
+
+## Features
+
+- 😊 Four emoji-based satisfaction levels (Excellent, Good, Fair, Poor)
+- 🎭 Smooth animations and transitions with Framer Motion
+- 📝 Expandable comment textarea for detailed feedback
+- ✅ Success state with animated confirmation
+- 🔄 Loading states during submission
+- 🌙 Dark mode support with proper theming
+- ♿ Fully accessible with ARIA labels and semantic HTML
+- 📱 Responsive design that works on all devices
+- ⚡ Mock API integration ready for real backend
+- 🎯 Auto-reset form after successful submission
+
+## Notice
+
+This component includes a mock API function that simulates feedback submission. Replace the `mockFeedbackAPI` function with your actual API endpoint. The component uses Framer Motion for animations which adds to the bundle size.
+
+## Satisfaction Levels
+
+The widget includes four predefined satisfaction levels:
+
+<CopyCode>
+  {`const SATISFACTION_LEVELS = [
+  {
+    level: 4,
+    emoji: Laugh,
+    color: "text-green-600",
+    label: "Excellent",
+    hoverColor: "hover:bg-green-50 dark:hover:bg-green-900/20"
+  },
+  {
+    level: 3,
+    emoji: Smile,
+    color: "text-green-400", 
+    label: "Good",
+    hoverColor: "hover:bg-green-50 dark:hover:bg-green-900/20"
+  },
+  {
+    level: 2,
+    emoji: Frown,
+    color: "text-yellow-400",
+    label: "Fair", 
+    hoverColor: "hover:bg-yellow-50 dark:hover:bg-yellow-900/20"
+  },
+  {
+    level: 1,
+    emoji: Angry,
+    color: "text-red-600",
+    label: "Poor",
+    hoverColor: "hover:bg-red-50 dark:hover:bg-red-900/20"
+  }
+];`}
+</CopyCode>
+
+## API Integration
+
+Replace the mock API function with your actual endpoint:
+
+<CopyCode>
+  {`// Replace this mock function
+const mockFeedbackAPI = () =>
+  new Promise<void>((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() > 0.9) {
+        reject(new Error("Network error"));
+      } else {
+        resolve();
+      }
+    }, 1000 + Math.random() * 1000);
+  });
+
+// With your actual API call
+const submitFeedbackAPI = async (satisfactionLevel: number, comment: string) => {
+  const response = await fetch('/api/feedback', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      satisfactionLevel,
+      comment,
+      timestamp: new Date().toISOString(),
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to submit feedback');
+  }
+
+  return response.json();
+};`}
+</CopyCode>
+
+## Custom Hook
+
+The component includes a custom hook `useFeedbackSubmission` that handles:
+
+- Submission state management
+- Loading states
+- Error handling  
+- Success state tracking
+- API integration
+
+<CopyCode>
+  {`const { 
+  submitUserFeedback, 
+  isSubmitting, 
+  submissionError, 
+  isSuccessfullySubmitted 
+} = useFeedbackSubmission();`}
+</CopyCode>
+
+## Styling
+
+The component uses Tailwind CSS classes and supports dark mode. Key styling features:
+
+- Rounded corners that animate from pill shape to regular rounded
+- Smooth hover effects on emoji buttons
+- Focus states for accessibility
+- Responsive design with proper spacing
+- Dark mode variants for all elements
+
+## Dependencies
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Package</TableHead>
+      <TableHead>Version</TableHead>
+      <TableHead>Purpose</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>framer-motion</code></TableCell>
+      <TableCell><code>^10.0.0</code></TableCell>
+      <TableCell>Animations and layout transitions</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>lucide-react</code></TableCell>
+      <TableCell><code>^0.263.1</code></TableCell>
+      <TableCell>Icons for emojis and UI elements</TableCell>
+    </TableRow>
+    
+  </TableBody>
+</Table>
+
+## Component Structure
+
+The FeedbackWidget consists of several key parts:
+
+1. **Header Section**: Contains the question text and emoji rating buttons
+2. **Expandable Form**: Comment textarea and submit button (shows when rating selected)
+3. **Success Message**: Animated confirmation with checkmark icon
+4. **State Management**: Custom hook handling submission logic

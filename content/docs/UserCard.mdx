@@ -1,0 +1,265 @@
+---
+title: User Card
+description: A clean and simple user card component displaying avatar, name, and description with optimized Next.js Image component.
+author: deep
+published: true
+date: 2025-07-27
+slug: components/user-card
+---
+
+<ComponentPreview name="user-card" />
+
+<InfoOut>The UserCard component provides a clean, consistent way to display user information with avatar, name, and description - perfect for user lists, team members, and profile displays</InfoOut>
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+<CopyCode>
+      {`npx shadcn@latest add "https://your-registry.com/r/user-card.json"`}
+    </CopyCode>
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="user-card" />
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+<CopyCode>
+  {`import { UserCard } from "@/components/ui/user-card";
+
+export default function Example() {
+  return (
+    <div>
+      <UserCard 
+        avatarSrc="/avatars/john-doe.jpg"
+        name="John Doe"
+        description="Senior Frontend Developer"
+      />
+    </div>
+  );
+}`}
+</CopyCode>
+
+## Variants
+
+<CopyCode>
+  {`// Basic user card
+<UserCard 
+  avatarSrc="/avatars/jane-smith.jpg"
+  name="Jane Smith"
+  description="Product Manager"
+/>
+
+// Team member card
+<UserCard 
+  avatarSrc="/avatars/alex-johnson.jpg"
+  name="Alex Johnson"
+  description="UI/UX Designer • 3 years experience"
+/>
+
+// Author card
+<UserCard 
+  avatarSrc="/avatars/author.jpg"
+  name="Sarah Wilson"
+  description="Technical Writer & Content Strategist"
+/>
+
+// Custom styling
+<UserCard 
+  avatarSrc="/avatars/user.jpg"
+  name="Mike Chen"
+  description="Full Stack Developer"
+  className="hover:shadow-md transition-shadow duration-200"
+/>
+
+// With longer descriptions
+<UserCard 
+  avatarSrc="/avatars/emma.jpg"
+  name="Emma Thompson"
+  description="Senior Software Engineer specializing in React and Node.js"
+/>
+
+// In a grid layout
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <UserCard 
+    avatarSrc="/avatars/user1.jpg"
+    name="David Park"
+    description="DevOps Engineer"
+  />
+  <UserCard 
+    avatarSrc="/avatars/user2.jpg"
+    name="Lisa Zhang"
+    description="Data Scientist"
+  />
+  <UserCard 
+    avatarSrc="/avatars/user3.jpg"
+    name="Tom Rodriguez"
+    description="Backend Developer"
+  />
+</div>
+
+// In a list format
+<div className="space-y-3">
+  <UserCard 
+    avatarSrc="/avatars/member1.jpg"
+    name="Anna Cooper"
+    description="Team Lead"
+  />
+  <UserCard 
+    avatarSrc="/avatars/member2.jpg"
+    name="James Wilson"
+    description="Senior Developer"
+  />
+</div>`}
+</CopyCode>
+
+## Features
+
+- 🖼️ Optimized Next.js Image component with proper sizing
+- 👤 Circular avatar with overflow handling
+- 📱 Responsive design that works on all screen sizes
+- 🌙 Full dark mode support with proper contrast
+- 🎨 Clean, minimal design that fits any interface
+- ♿ Semantic HTML structure for accessibility
+- 🔧 Customizable styling with className prop
+- ⚡ Lightweight with minimal dependencies
+- 📏 Consistent spacing and typography
+
+## Notice
+
+This component uses Next.js Image component which requires proper configuration in your `next.config.js` for external images. Make sure to add your image domains to the `images.domains` or `images.remotePatterns` configuration.
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>avatarSrc</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>—</code></TableCell>
+      <TableCell>Source URL for the user's avatar image</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>name</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>—</code></TableCell>
+      <TableCell>User's display name</TableCell>
+    </TableRow>
+   
+    <TableRow>
+      <TableCell><code>description</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>—</code></TableCell>
+      <TableCell>User's role, title, or description</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>className</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>—</code></TableCell>
+      <TableCell>Additional CSS classes for the card container</TableCell>
+    </TableRow>
+    
+  </TableBody>
+</Table>
+
+## Image Configuration
+
+For Next.js projects, configure your `next.config.js` to handle external images:
+
+<CopyCode>
+  {`// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+    ],
+  },
+}
+
+module.exports = nextConfig`}
+</CopyCode>
+
+## Examples
+
+<CopyCode>
+  {`// Team page
+<div className="max-w-4xl mx-auto p-6">
+  <h1 className="text-3xl font-bold mb-8">Our Team</h1>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {teamMembers.map((member) => (
+      <UserCard
+        key={member.id}
+        avatarSrc={member.avatar}
+        name={member.name}
+        description={member.role}
+        className="hover:shadow-lg transition-shadow duration-300"
+      />
+    ))}
+  </div>
+</div>
+
+// Comment section
+<div className="space-y-4">
+  {comments.map((comment) => (
+    <div key={comment.id} className="border-b pb-4">
+      <UserCard
+        avatarSrc={comment.author.avatar}
+        name={comment.author.name}
+        description={comment.createdAt}
+        className="mb-3"
+      />
+      <p className="text-gray-700 dark:text-gray-300">{comment.content}</p>
+    </div>
+  ))}
+</div>
+
+// Sidebar user info
+<aside className="w-64 p-4">
+  <UserCard
+    avatarSrc="/current-user-avatar.jpg"
+    name="Current User"
+    description="Online now"
+    className="mb-6"
+  />
+</aside>`}
+</CopyCode>
+
+## Accessibility
+
+The component includes several accessibility features:
+
+- Proper `alt` text for avatar images using the user's name
+- Semantic HTML structure with appropriate heading levels
+- Good color contrast in both light and dark modes
+- Keyboard navigation support when used in interactive contexts

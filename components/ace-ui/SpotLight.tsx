@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-
 import { cn } from '@/lib/utils'
 
 interface SpotLightProps {
@@ -12,8 +11,8 @@ interface SpotLightProps {
 
 export const SpotLight = ({
     className,
-    children,
-    spotlightColor
+    children = 'Hover me',
+    spotlightColor = 'rgba(151, 151, 151, 0.1)'
 }: SpotLightProps) => {
     const spotRef = React.useRef<HTMLDivElement>(null)
     const [isGlowing, setIsGlowing] = React.useState(false)
@@ -53,8 +52,8 @@ export const SpotLight = ({
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             className={cn(
-                'bg-background relative size-full overflow-hidden rounded-xl border cursor-pointer text-gray-400 hover:text-white',
-                className
+                'h-52 w-40 flex justify-center items-center bg-black border border-white relative overflow-hidden rounded-xl cursor-pointer text-gray-400 hover:text-white',
+                className // allow overrides
             )}
         >
             {children}

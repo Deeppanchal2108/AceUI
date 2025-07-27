@@ -4,6 +4,7 @@
 // import { Kbd } from "@/components/ace-ui/Kbd";
 // import { SpotLight } from "@/components/ace-ui/SpotLight";
 // import { Tooltip } from "@/components/ace-ui/ToolTip";
+
 // import {
 //     List,
 //     Bookmark,
@@ -46,6 +47,17 @@ function Page() {
         <div className=" text-white bg-black font-sans px-4 py-10">
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                             {/* <Tooltip side="bottom" align="center" content="Copy to clipboard">
+                    <Button className="rounded bg-neutral-800 px-2 py-1 text-white">
+                        📋 Copy
+                    </Button>
+            </Tooltip> */}
+                
+                {/* <Tooltip side="bottom" align="center" content="Copy to clipboard">
+                <Button className="rounded bg-neutral-800 px-2 py-1 text-white">
+                    📋 Copy
+                </Button>
+            </Tooltip> */}
 
                 {/* <div className="bg-white rounded-2xl shadow-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Default Style</h3>
@@ -114,19 +126,13 @@ function Page() {
                     description="Product Designer"
                 />
             </div> */}
-            {/* <Tooltip side="bottom" align="center" content="Copy to clipboard">
-                <Button className="rounded bg-neutral-800 px-2 py-1 text-white">
-                    📋 Copy
-                </Button>
-            </Tooltip> */}
+         
             {/* <div className="flex items-center gap-3">
                 <span className="text-sm text-gray-600 dark:text-gray-400 min-w-[120px]">Open Command Palette:</span>
                 <Kbd size="md" keys={["command","delete", "p"]} />
             </div> */}
 
-            {/* <SpotLight className='h-52 w-40 flex justify-center items-center bg-black border border-white ' spotlightColor='rgba(151, 151, 151, 0.1)'>
-                Hover me
-            </SpotLight> */}
+            
        
         // <div className="w-full text-white min-h-screen relative bg-black font-sans">
           

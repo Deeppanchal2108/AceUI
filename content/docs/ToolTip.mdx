@@ -1,0 +1,223 @@
+---
+title: Tooltip
+description: A accessible tooltip component built with Radix UI that displays helpful information on hover or focus.
+author: deep
+published: true
+date: 2025-07-27
+slug: components/tool-tip
+---
+
+<ComponentPreview name="tool-tip" />
+
+<InfoOut>The Tooltip component provides contextual information in a floating overlay, built on Radix UI primitives for accessibility and keyboard navigation support</InfoOut>
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+<CopyCode>
+      {`npx shadcn@latest add "https://your-registry.com/r/tooltip.json"`}
+    </CopyCode>
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Install the required dependency:</Step>
+<CopyCode>
+{`npm install @radix-ui/react-tooltip`}
+</CopyCode>
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="tooltip" />
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+<CopyCode>
+  {`import { Tooltip } from "@/components/ui/tooltip";
+import { Copy } from "lucide-react";
+
+export default function Example() {
+  return (
+    <div>
+      <Tooltip content="Copy to clipboard">
+        <button className="p-2 rounded hover:bg-gray-100">
+          <Copy className="w-4 h-4" />
+        </button>
+      </Tooltip>
+    </div>
+  );
+}`}
+</CopyCode>
+
+## Variants
+
+<CopyCode>
+  {`// Different sides
+<Tooltip content="Tooltip on top" side="top">
+  <button>Top</button>
+</Tooltip>
+
+<Tooltip content="Tooltip on bottom" side="bottom">
+  <button>Bottom</button>
+</Tooltip>
+
+<Tooltip content="Tooltip on left" side="left">
+  <button>Left</button>
+</Tooltip>
+
+<Tooltip content="Tooltip on right" side="right">
+  <button>Right</button>
+</Tooltip>
+
+// Different alignments
+<Tooltip content="Aligned to start" align="start">
+  <button>Start Aligned</button>
+</Tooltip>
+
+<Tooltip content="Centered alignment" align="center">
+  <button>Center Aligned</button>
+</Tooltip>
+
+<Tooltip content="Aligned to end" align="end">
+  <button>End Aligned</button>
+</Tooltip>
+
+// Rich content
+<Tooltip 
+  content={
+    <div>
+      <div className="font-semibold">Pro Tip</div>
+      <div className="text-xs opacity-90">Use Cmd+C to copy</div>
+    </div>
+  }
+>
+  <button>Rich Tooltip</button>
+</Tooltip>
+
+// Custom styling
+<Tooltip 
+  content="Custom styled tooltip"
+  className="bg-blue-600 text-blue-50"
+>
+  <button>Custom Style</button>
+</Tooltip>
+
+// With icons
+<Tooltip content="Delete this item">
+  <button className="text-red-500 hover:text-red-700">
+    <Trash2 className="w-4 h-4" />
+  </button>
+</Tooltip>
+
+// Long content
+<Tooltip 
+  content="This is a longer tooltip content that demonstrates how the component handles more text and wraps appropriately within the maximum width constraint."
+>
+  <button>Long Content</button>
+</Tooltip>`}
+</CopyCode>
+
+## Features
+
+- ♿ Fully accessible with ARIA attributes and keyboard navigation
+- 🎯 Smart positioning with collision detection
+- ⏱️ Configurable delay duration (100ms default)
+- 🎨 Customizable styling with className prop
+- 📍 Four positioning sides: top, bottom, left, right
+- ↔️ Three alignment options: start, center, end
+- 🎭 Smooth animations with fade and zoom effects
+- 🖱️ Triggers on hover, focus, and touch
+- 📱 Mobile-friendly with touch support
+- 🎯 Arrow pointer for better visual connection
+
+## Notice
+
+This component requires `@radix-ui/react-tooltip` as a dependency. The tooltip automatically handles collision detection and will flip sides if there's insufficient space.
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>children</code></TableCell>
+      <TableCell><code>React.ReactNode</code></TableCell>
+      <TableCell><code>"Copy"</code></TableCell>
+      <TableCell>The trigger element that shows tooltip on hover/focus</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>content</code></TableCell>
+      <TableCell><code>React.ReactNode</code></TableCell>
+      <TableCell><code>"Copy to clipboard"</code></TableCell>
+      <TableCell>The content displayed inside the tooltip</TableCell>
+    </TableRow>
+   
+    <TableRow>
+      <TableCell><code>side</code></TableCell>
+      <TableCell><code>'top' | 'bottom' | 'left' | 'right'</code></TableCell>
+      <TableCell><code>'top'</code></TableCell>
+      <TableCell>Preferred side for tooltip placement</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>align</code></TableCell>
+      <TableCell><code>'start' | 'center' | 'end'</code></TableCell>
+      <TableCell><code>'center'</code></TableCell>
+      <TableCell>Alignment of tooltip relative to trigger</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>className</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>—</code></TableCell>
+      <TableCell>Additional CSS classes for tooltip content</TableCell>
+    </TableRow>
+    
+  </TableBody>
+</Table>
+
+## Examples
+
+<CopyCode>
+  {`// Icon button with tooltip
+<Tooltip content="Save document" side="bottom">
+  <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
+    <Save className="w-5 h-5 text-gray-600" />
+  </button>
+</Tooltip>
+
+// Form field help
+<div className="flex items-center gap-2">
+  <label htmlFor="email">Email</label>
+  <Tooltip content="We'll never share your email address">
+    <HelpCircle className="w-4 h-4 text-gray-400" />
+  </Tooltip>
+</div>
+
+// Navigation item
+<Tooltip content="Go to dashboard" side="right">
+  <a href="/dashboard" className="p-2 block rounded hover:bg-gray-100">
+    <Home className="w-5 h-5" />
+  </a>
+</Tooltip>
+
+// Disabled button explanation
+<Tooltip content="Please fill all required fields to continue">
+  <button disabled className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed">
+    Submit
+  </button>
+</Tooltip>`}
+</CopyCode>

@@ -75,7 +75,7 @@ export const sidebar = [
             {
                 title: "User Card",
                 href: `/components/user-card`,
-                label: "New",
+                label: "",
                 items: [],
             },
 

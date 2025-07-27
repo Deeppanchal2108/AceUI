@@ -12,9 +12,9 @@ interface UserCardProps {
 }
 
 export function UserCard({
-    avatarSrc,
-    name,
-    description,
+    avatarSrc ="/man.jpeg",
+    name="Anand Yadav",
+    description="Software Engineer",
     className,
 }: UserCardProps) {
     return (
