@@ -35,13 +35,7 @@ function DesktopNavbar() {
                             Components
                         </Button>
                     </Link>
-                    <Link href={"/backgrounds"}>
-                        <Button className='hover:bg-transparent  hover:shadow-none hover:cursor-pointer hover:text-gray-300 transition-colors duration-300 text-sm font-semibold font-dmsans' variant={"ghost"}>
-                            Backgrounds
-
-
-                        </Button>
-                    </Link>
+                   
 
 
                     <div>

@@ -36,11 +36,11 @@ const testimonials = [
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-[24rem] pb-6 rounded-md flex flex-col antialiased items-center justify-center relative z mb-10">
+    <div className="h-[24rem] pb-6 rounded-md flex flex-col antialiased items-center justify-center relative z mb-10 w-full">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
-        speed="slow"
+        speed="fast"
       />
     </div>
   );
