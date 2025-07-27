@@ -1,0 +1,178 @@
+---
+title: Kbd
+description: A keyboard key component that displays keyboard shortcuts and key combinations with authentic styling and proper symbols.
+author: deep
+published: true
+date: 2025-07-27
+slug: components/kbd
+---
+
+<ComponentPreview name="kbd" />
+
+<InfoOut>The Kbd component renders keyboard keys and shortcuts with realistic styling, perfect for documentation, tutorials, and UI instructions that need to show keyboard interactions</InfoOut>
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+<CopyCode>
+      {`npx shadcn@latest add "https://your-registry.com/r/kbd.json"`}
+    </CopyCode>
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="kbd" />
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+<CopyCode>
+  {`import { Kbd } from "@/components/kbd";
+
+export default function Example() {
+  return (
+    <div>
+      <Kbd keys={["command", "delete", "p"]} />
+    </div>
+  );
+}`}
+</CopyCode>
+
+## Variants
+
+<CopyCode>
+  {`// Default variant
+<Kbd keys={["ctrl", "c"]} />
+
+// Outline variant  
+<Kbd keys={["shift", "enter"]} variant="outline" />
+
+// Ghost variant
+<Kbd keys={["escape"]} variant="ghost" />
+
+// Different sizes
+<Kbd keys={["tab"]} size="sm" />
+<Kbd keys={["space"]} size="md" />
+<Kbd keys={["command", "k"]} size="lg" />
+
+// Single keys
+<Kbd keys={["enter"]} />
+<Kbd keys={["delete"]} />
+<Kbd keys={["escape"]} />
+
+// Multiple key combinations
+<Kbd keys={["command", "shift", "p"]} />
+<Kbd keys={["ctrl", "alt", "delete"]} />
+
+// Arrow keys
+<Kbd keys={["up"]} />
+<Kbd keys={["down", "right"]} />
+
+// Custom text keys
+<Kbd keys={["F1"]} />
+<Kbd keys={["a", "b", "c"]} />`}
+</CopyCode>
+
+## Features
+
+- ⌨️ Realistic keyboard key styling with gradients and shadows
+- 🔤 Support for special keys with proper Unicode symbols
+- 📏 Multiple sizes: `sm`, `md`, `lg`
+- 🎨 Three variants: `default`, `outline`, `ghost`
+- 🌙 Dark mode support with proper contrast
+- 🔗 Supports key combinations and sequences
+- ♿ Accessible with proper semantic structure
+- ⚙️ TypeScript support with predefined key types
+
+## Notice
+
+The component uses Unicode symbols for special keys which may not render consistently across all fonts and operating systems. Test thoroughly in your target environments.
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>keys</code></TableCell>
+      <TableCell><code>KbdKey[]</code></TableCell>
+      <TableCell><code>["command", "delete", "p"]</code></TableCell>
+      <TableCell>Array of keyboard keys to display</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>variant</code></TableCell>
+      <TableCell><code>'default' | 'outline' | 'ghost'</code></TableCell>
+      <TableCell><code>'default'</code></TableCell>
+      <TableCell>Visual style variant of the kbd component</TableCell>
+    </TableRow>
+   
+    <TableRow>
+      <TableCell><code>size</code></TableCell>
+      <TableCell><code>'sm' | 'md' | 'lg'</code></TableCell>
+      <TableCell><code>'md'</code></TableCell>
+      <TableCell>Size of the keyboard keys</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>className</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>—</code></TableCell>
+      <TableCell>Additional CSS classes</TableCell>
+    </TableRow>
+    
+  </TableBody>
+</Table>
+
+## Available Keys
+
+The component supports the following predefined keys with special symbols:
+
+<CopyCode>
+  {`// Special modifier keys
+"command" → ⌘
+"shift" → ⇧  
+"ctrl" → ⌃
+"option" → ⌥
+"alt" → ⎇
+"fn" → fn
+"win" → ⊞
+
+// Action keys
+"enter" → ⏎
+"delete" → ⌫
+"escape" → ⎋
+"tab" → ⇥
+"capslock" → ⇪
+"space" → ␣
+
+// Arrow keys
+"up" → ↑
+"down" → ↓
+"left" → ←
+"right" → →
+
+// Navigation keys
+"pageup" → ⇞
+"pagedown" → ⇟
+"home" → ⇱
+"end" → ⇲
+"help" → ?
+
+// Custom keys
+Any string not in the above list will be displayed in uppercase`}
+</CopyCode>

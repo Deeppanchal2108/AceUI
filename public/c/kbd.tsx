@@ -58,7 +58,7 @@ interface KbdProps extends React.HTMLAttributes<HTMLDivElement> {
     size?: "sm" | "md" | "lg"
 }
 
-export function Kbd({ keys =  ["command", "delete", "p"], className, variant = "default", size = "md", ...props }: KbdProps) {
+export function Kbd({ keys, className, variant = "default", size = "md", ...props }: KbdProps) {
     const variants = {
         default:
             "bg-gradient-to-b from-gray-100 to-gray-200 border-gray-300 text-gray-800 shadow-[0_2px_0_0_rgb(0,0,0,0.1),inset_0_1px_0_0_rgb(255,255,255,0.8)] dark:from-gray-700 dark:to-gray-800 dark:border-gray-600 dark:text-gray-200 dark:shadow-[0_2px_0_0_rgb(0,0,0,0.3),inset_0_1px_0_0_rgb(255,255,255,0.1)]",

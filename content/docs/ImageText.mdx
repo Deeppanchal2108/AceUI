@@ -1,0 +1,142 @@
+---
+title: Image Text
+description: A component that creates stunning text with image backgrounds using CSS mask properties for eye-catching typography.
+author: deep
+published: true
+date: 2025-07-27
+slug: components/image-text
+---
+
+<ComponentPreview name="image-text" />
+
+<InfoOut>The ImageText component creates visually striking text by applying image backgrounds with CSS masking, perfect for hero sections, headings, and artistic typography effects</InfoOut>
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+<CopyCode>
+      {`npx shadcn@latest add "https://your-registry.com/r/image-text.json"`}
+    </CopyCode>
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="image-text" />
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+<CopyCode>
+  {`import { ImageText } from "@/components/image-text";
+
+export default function Example() {
+  return (
+    <div>
+      <ImageText text="AceUI" backgroundImage="/image-text.jpg" />
+    </div>
+  );
+}`}
+</CopyCode>
+
+## Variants
+
+<CopyCode>
+  {`// Different font sizes
+<ImageText 
+  text="Large Title" 
+  backgroundImage="/hero-bg.jpg"
+  fontSizeClasses="text-6xl md:text-8xl lg:text-9xl"
+/>
+
+// Custom alignment
+<ImageText 
+  text="Left Aligned" 
+  backgroundImage="/texture.jpg"
+  align="left"
+/>
+
+// Custom styling
+<ImageText 
+  text="Custom Style" 
+  backgroundImage="/gradient.jpg"
+  fontWeight="font-black"
+  className="tracking-wider"
+/>`}
+</CopyCode>
+
+## Features
+
+- 🖼️ Image background text masking effect
+- 📱 Responsive font sizing with Tailwind classes
+- ↔️ Multiple text alignment options: `left`, `center`, `right`
+- 🎨 Customizable font weight and styling
+- ♿ Accessible and semantic HTML structure
+- ⚙️ TypeScript support with full IntelliSense
+
+## Notice
+
+Make sure your background images are optimized and have good contrast with surrounding elements for better readability and performance.
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>text</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>"Ace UI"</code></TableCell>
+      <TableCell>The text content to display</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>backgroundImage</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>"/image-text.jpg"</code></TableCell>
+      <TableCell>Path to the background image</TableCell>
+    </TableRow>
+   
+    <TableRow>
+      <TableCell><code>fontSizeClasses</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>"text-4xl sm:text-6xl md:text-7xl lg:text-8xl"</code></TableCell>
+      <TableCell>Tailwind font size classes for responsive sizing</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>fontWeight</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>"font-extrabold"</code></TableCell>
+      <TableCell>Tailwind font weight class</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>align</code></TableCell>
+      <TableCell><code>'left' | 'center' | 'right'</code></TableCell>
+      <TableCell><code>'center'</code></TableCell>
+      <TableCell>Text alignment</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>className</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>''</code></TableCell>
+      <TableCell>Additional CSS classes</TableCell>
+    </TableRow>
+    
+  </TableBody>
+</Table>

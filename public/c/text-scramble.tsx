@@ -1,20 +1,20 @@
-"use client"
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TextScrambleProps {
     children: string;
-    speed?: number; 
-    duration?: number; 
+    speed?: number;
+    duration?: number;
     className?: string;
 }
 
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
 
 export const TextScramble: React.FC<TextScrambleProps> = ({
-    children= "Scramble Me!",
+    children = "Scramble Me!",
     speed = 50,
-    duration = 800,
-    className = ""
+    duration = 1000,
+    className = "",
 }) => {
     const [displayText, setDisplayText] = useState(children);
     const originalTextRef = useRef(children);
@@ -28,8 +28,8 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
         const scrambleStep = () => {
             const newText = original
                 .split("")
-                .map((char, i) => {
-                    if (Math.random() < (currentIteration / iterations)) {
+                .map((char) => {
+                    if (Math.random() < currentIteration / iterations) {
                         return char;
                     }
                     return CHARS[Math.floor(Math.random() * CHARS.length)];
@@ -57,7 +57,9 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
 
     return (
         <span
-            className={`cursor-pointer transition-colors ${className}`}
+            className={`cursor-pointer transition-colors font-jost font-bold 
+        text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 
+        ${className}`}
             onMouseEnter={scramble}
         >
             {displayText}
