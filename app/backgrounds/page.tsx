@@ -4,17 +4,102 @@ import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ace-ui/Kbd";
 import { SpotLight } from "@/components/ace-ui/SpotLight";
 import { Tooltip } from "@/components/ace-ui/ToolTip";
+import {
+    List,
+    Bookmark,
+    DollarSign,
+    Shield,
+    MessageSquare,
+    Briefcase,
+    Plus,
+    Settings,
+    MoreHorizontal,
+    User
+} from 'lucide-react';
+
 
 import { UserCard } from "@/components/ace-ui/UserCard";
 
 import ImageText from "@/components/ace-ui/ImageText";
 
 import { FeedbackWidget } from "@/components/ace-ui/FeedbackWidget";
+import {DropdownMenu} from "@/components/ace-ui/DropdownMenu";
 function Page() {
     
+    const defaultMenuItems = [
+        { icon: List, label: 'Lists', id: 'lists' },
+        { icon: Bookmark, label: 'Bookmarks', id: 'bookmarks' },
+        { icon: DollarSign, label: 'Monetization', id: 'monetization' },
+        { icon: Shield, label: 'Verified Orgs', id: 'verified' },
+        { icon: MessageSquare, label: 'Ads', id: 'ads' },
+        { icon: Briefcase, label: 'Jobs', id: 'jobs' },
+        { icon: Plus, label: 'Create your Space', id: 'create-space' },
+        { icon: Settings, label: 'Settings and privacy', id: 'settings' },
+    ];
 
+    const customMenuItems = [
+        { icon: User, label: 'Profile', id: 'profile' },
+        { icon: Settings, label: 'Settings', id: 'settings' },
+        { icon: Briefcase, label: 'Dashboard', id: 'dashboard' },
+    ];
     return (
         <div className=" text-white bg-black font-sans px-4 py-10">
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+
+                {/* Default Configuration */}
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Default Style</h3>
+                    <div className="flex justify-center">
+                        <DropdownMenu
+                            menuItems={defaultMenuItems}
+                            buttonHref="/create-post"
+                        />
+                    </div>
+                </div>
+
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Disabled</h3>
+                    <div className="flex justify-center">
+                        <DropdownMenu
+                            menuItems={customMenuItems}
+                            disabled={true}
+                        />
+                    </div>
+                </div>
+
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Right Aligned</h3>
+                    <div className="flex justify-end">
+                        <DropdownMenu
+                            triggerText="Options"
+                            menuItems={customMenuItems.slice(0, 3)}
+                            buttonText="Apply"
+                            buttonHref="/apply"
+                            position="right"
+                        />
+                    </div>
+                </div>
+
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Compact</h3>
+                    <div className="flex justify-center">
+                        <DropdownMenu
+                            triggerText="Menu"
+                            menuItems={customMenuItems.slice(0, 3)}
+                            buttonText=""
+                            width="w-56"
+                            triggerClassName="px-4 py-2 text-sm"
+                            itemClassName="px-4 py-3"
+                        />
+                    </div>
+                </div>
+
+            
+            </div>
+        </div>
+    );
+           
             {/* <div className="fixed bottom-6 right-6 z-50">
                 <FeedbackWidget />
             </div>
@@ -43,7 +128,7 @@ function Page() {
             {/* <SpotLight className='h-52 w-40 flex justify-center items-center bg-black border border-white ' spotlightColor='rgba(151, 151, 151, 0.1)'>
                 Hover me
             </SpotLight> */}
-        </div>
+       
         // <div className="w-full text-white min-h-screen relative bg-black font-sans">
           
         //     <div
@@ -73,7 +158,7 @@ function Page() {
 
         //     </div>
         // </div>
-    );
+   
 }
 
 export default Page;
