@@ -19,7 +19,7 @@ function CopyCode({ children, language = "tsx" }: CopyCodeProps) {
     }
 
     return (
-        <div className="w-[310px] sm:w-full relative group rounded-lg overflow-x-auto bg-zinc-900">
+        <div className="w-[310px] sm:w-full relative group rounded-lg overflow-x-auto bg-[#1e1e1e]">
             <button
                 onClick={handleCopy}
                 className="absolute top-2 right-2 z-10 text-white px-2 py-1 text-xs"
