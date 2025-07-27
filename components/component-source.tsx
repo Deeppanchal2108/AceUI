@@ -9,18 +9,12 @@ interface ComponentSourceProps {
 }
 
 export function ComponentSource({ name }: ComponentSourceProps) {
-    const Component = componentMap[name];
-
-    if (!Component) {
-        return (
-            <div className="text-red-500">
-                Component "{name}" not found in componentMap.
-            </div>
-        );
-    }
 
     const [code, setCode] = useState<string>("");
     const [copy, setCopy] = useState<boolean>(false);
+    const Component = componentMap[name];
+
+    
 
     useEffect(() => {
         const fetchCode = async () => {
@@ -40,6 +34,15 @@ export function ComponentSource({ name }: ComponentSourceProps) {
         setCopy(true);
         setTimeout(() => setCopy(false), 900);
     };
+
+    if (!Component) {
+        return (
+            <div className="text-red-500">
+                Component {name} not found in componentMap.
+            </div>
+        );
+    }
+
 
     return (
         <div className="w-[310px] sm:w-full mx-auto overflow-x-auto rounded-lg">
