@@ -39,12 +39,12 @@ function CopyCode({ children, language = "tsx" }: CopyCodeProps) {
                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                     <pre className={`p-4 text-sm ${className}`} style={style}>
                         {tokens.map((line, i) => {
-                            const { key, ...restLineProps } = getLineProps({ line })
+                            const {  ...restLineProps } = getLineProps({ line })
                             return (
                                 <div key={i} {...restLineProps}>
                                     <span className="select-none text-zinc-600 pr-3">{i + 1}</span>
                                     {line.map((token, j) => {
-                                        const { key, ...restTokenProps } = getTokenProps({ token })
+                                        const {  ...restTokenProps } = getTokenProps({ token })
                                         return <span key={j} {...restTokenProps} />
                                     })}
                                 </div>

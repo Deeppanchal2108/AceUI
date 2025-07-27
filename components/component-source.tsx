@@ -3,12 +3,15 @@
 import { useEffect, useState } from "react";
 import { componentMap } from "./component-map";
 import { Copy, Check } from "lucide-react";
-
+import { Highlight, themes } from "prism-react-renderer"
 interface ComponentSourceProps {
     name: string;
+     language?: "tsx" | "js" | "ts" | "json" | "css" | "html" | string
+
 }
 
-export function ComponentSource({ name }: ComponentSourceProps) {
+
+export function ComponentSource({ name, language='tsx' }: ComponentSourceProps) {
 
     const [code, setCode] = useState<string>("");
     const [copy, setCopy] = useState<boolean>(false);
@@ -46,7 +49,7 @@ export function ComponentSource({ name }: ComponentSourceProps) {
 
     return (
         <div className="w-[310px] sm:w-full mx-auto overflow-x-auto rounded-lg">
-            <pre className="relative whitespace-pre-wrap rounded-md bg-zinc-800 p-4 text-white text-sm overflow-x-auto">
+            <pre className="relative whitespace-pre-wrap rounded-md bg-[#1e1e1e] p-4 text-white text-sm overflow-x-auto">
                 <button
                     onClick={handleClick}
                     className="absolute top-0 right-0 px-5 py-3 cursor-pointer transition-all duration-300 ease-in group"
@@ -60,7 +63,28 @@ export function ComponentSource({ name }: ComponentSourceProps) {
                     </span>
                 </button>
 
-                <code>{code}</code>
+                 <Highlight
+                                code={code.trim()}
+                                language={language}
+                                theme={themes.vsDark}
+                            >
+                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                                    <pre className={`p-4 text-sm ${className}`} style={style}>
+                                        {tokens.map((line, i) => {
+                                            const {  ...restLineProps } = getLineProps({ line })
+                                            return (
+                                                <div key={i} {...restLineProps}>
+                                                    <span className="select-none text-zinc-600 pr-3">{i + 1}</span>
+                                                    {line.map((token, j) => {
+                                                        const {  ...restTokenProps } = getTokenProps({ token })
+                                                        return <span key={j} {...restTokenProps} />
+                                                    })}
+                                                </div>
+                                            )
+                                        })}
+                                    </pre>
+                                )}
+                            </Highlight>
             </pre>
         </div>
     );
