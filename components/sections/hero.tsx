@@ -4,7 +4,6 @@ import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 
 import {  ChevronRightIcon } from "lucide-react";
-import { AnimatedSubscribeButton } from "@/components/magicui/animated-subscribe-button";
 import { cn } from "@/lib/utils";
 import { AnimatedShinyText } from '../magicui/animated-shiny-text';
 
@@ -32,16 +31,13 @@ export function AnimatedShinyTextDemo() {
 
 export function AnimatedSubscribeButtonDemo() {
     return (
-        <AnimatedSubscribeButton className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[250px] ">
+        <Button className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]  py-[5px]">
             <span className="group inline-flex items-center text-xs sm:text-sm md:text-base font-jost">
                 <Link href={"/components/text-scramble"}>Browse Components</Link>
                 <ChevronRightIcon className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
-            <span className="group inline-flex items-center text-xs sm:text-sm md:text-base font-jost">
-                <Link href={"/components/text-scramble"}>Browse Components</Link>
-                <ChevronRightIcon className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </span>
-        </AnimatedSubscribeButton>
+          
+        </Button>
     );
 }
 

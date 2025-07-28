@@ -56,7 +56,7 @@ function MobileNavbar() {
                     {sidebar.map((i, index) => (
                         <div key={index}>
 
-                            <SidebarGroupLabel className="text-[15px] tracking-wide font-dmsans text-white font-bold pl-4 pr-2">
+                            <SidebarGroupLabel className="text-[16px] tracking-wide font-dmsans text-white font-bold pl-4 pr-2">
                                 {i.title}
                             </SidebarGroupLabel>
 
@@ -68,12 +68,12 @@ function MobileNavbar() {
                                                 <Link
                                                     href={item.href}
                                                     onClick={() => setIsOpen(false)}
-                                                    className={`*:block w-full text-sm font-dmsans text-neutral-200 font-medium px-4 text-left  
+                                                    className={`*:block w-full text-sm font-dmsans text-neutral-400 font-medium px-4 text-left  
     hover:bg-transparent hover:shadow-none hover:text-white 
     transition-colors duration-300 
     focus:outline-none focus:ring-0 focus:bg-transparent 
     active:bg-transparent active:text-white
-    visited:text-white
+
     ${path === item.href
                                                             ? "rounded-none bg-gradient-to-r from-[#1a1a1a] via-[#0f0f0f] to-black border-l-3 border-white shadow-lg"
                                                             : ""}`}

@@ -30,7 +30,6 @@ function CopyCode({ children, language = "tsx" }: CopyCodeProps) {
                     <Copy className="transition-opacity duration-300 w-4 h-4" />
                 )}
             </button>
-
             <Highlight
                 code={children.trim()}
                 language={language}
