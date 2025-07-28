@@ -7,6 +7,7 @@ import { UserCard } from "./ace-ui/UserCard";
 import { SpotLight } from "./ace-ui/SpotLight";
 import { Tooltip } from "./ace-ui/ToolTip";
 import { Kbd } from "./ace-ui/Kbd";
+import { ParticleBackground } from "./ace-ui/ParticleBackground";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const componentMap: Record<string, React.ComponentType<any>> = {
@@ -17,5 +18,6 @@ export const componentMap: Record<string, React.ComponentType<any>> = {
      "user-card": UserCard,
      "spot-light": SpotLight,
      "tool-tip": Tooltip,
-     "kbd": Kbd
+     "kbd": Kbd,
+     "particle-background": ParticleBackground
 };

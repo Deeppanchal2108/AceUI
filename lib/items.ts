@@ -84,6 +84,19 @@ export const sidebar = [
 
         ]
 
-    }
+    },
+      {
+        title: "Background Effects",
+        items: [
+            {
+                title: "Particle Background",
+                href: `/components/particle-background`,
+                label: "",
+                items: [],
+            }
+          
+        ]
+
+    },
 
 ]

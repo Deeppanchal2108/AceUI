@@ -23,7 +23,7 @@ export function AppSidebar() {
                     {sidebar.map((i, index) => (
                         <div key={index}>
 
-                            <SidebarGroupLabel className="text-sm tracking-wide font-dmsans text-white font-bold pl-4 pr-2">
+                            <SidebarGroupLabel className="text-[15px] tracking-wide font-dmsans text-white font-bold pl-4 pr-2">
                                 {i.title}
                             </SidebarGroupLabel>
 

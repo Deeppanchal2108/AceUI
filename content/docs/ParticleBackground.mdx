@@ -1,0 +1,315 @@
+---
+title: Particle Background
+description: A highly customizable animated particle background with dots and lines that move in various directions with smooth performance.
+author: deep
+published: true
+date: 2025-07-27
+slug: components/particle-background
+---
+
+<ComponentPreview name="particle-background" />
+
+<InfoOut>The ParticleBackground component creates stunning animated backgrounds with flowing particles, dots, and lines - perfect for hero sections, landing pages, and immersive experiences</InfoOut>
+
+## Installation
+
+<Tabs defaultValue="cli">
+<TabsList>
+<TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+<CopyCode>
+      {`npx shadcn@latest add "https://your-registry.com/r/particle-background.json"`}
+    </CopyCode>
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project.</Step>
+<ComponentSource name="particle-background" />
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+<CopyCode>
+  {`import { ParticleBackground } from "@/components/particle-background";
+
+export default function Example() {
+  return (
+    <div className="relative min-h-screen">
+      <ParticleBackground />
+      <div className="relative z-10 p-8">
+        <h1>Your content here</h1>
+      </div>
+    </div>
+  );
+}`}
+</CopyCode>
+
+## Variants
+
+<CopyCode>
+  {`// Default left-to-right flow
+<ParticleBackground />
+
+// Right to left movement
+<ParticleBackground 
+  direction="right-to-left"
+  dotColor="#10b981"
+  lineColor="#059669"
+/>
+
+// Vertical top to bottom
+<ParticleBackground 
+  direction="top-to-bottom"
+  speed={30}
+  maxParticles={100}
+/>
+
+// Diagonal movement
+<ParticleBackground 
+  direction="diagonal-tl-br"
+  dotColor="#f59e0b"
+  lineColor="#d97706"
+  glow={true}
+/>
+
+// Only dots, no lines
+<ParticleBackground 
+  dotsEnabled={true}
+  linesEnabled={false}
+  dotColor="#8b5cf6"
+  dotSize={3}
+  maxParticles={200}
+/>
+
+// Only lines, no dots
+<ParticleBackground 
+  dotsEnabled={false}
+  linesEnabled={true}
+  lineColor="#06b6d4"
+  lineLength={15}
+  lineWidth={2}
+/>
+
+// Slow moving with custom colors
+<ParticleBackground 
+  direction="bottom-to-top"
+  speed={20}
+  dotColor="#ec4899"
+  lineColor="#be185d"
+  backgroundColor="#1f1f23"
+  fadeEdges={true}
+/>
+
+// Fast energetic background
+<ParticleBackground 
+  direction="left-to-right"
+  speed={100}
+  maxParticles={300}
+  dotColor="#ef4444"
+  lineColor="#dc2626"
+  glow={true}
+/>
+
+// Subtle minimal effect
+<ParticleBackground 
+  speed={25}
+  maxParticles={50}
+  dotOpacity={0.3}
+  lineOpacity={0.2}
+  backgroundColor="#fafafa"
+  dotColor="#374151"
+  lineColor="#6b7280"
+  glow={false}
+/>`}
+</CopyCode>
+
+## Features
+
+- 🎯 Six movement directions: left-to-right, right-to-left, top-to-bottom, bottom-to-top, diagonal
+- ⚡ High-performance 60fps animation with requestAnimationFrame
+- 🎨 Separate customization for dots and lines (colors, sizes, opacity)
+- 📱 Responsive canvas that adapts to screen size and device pixel ratio
+- 🌟 Optional glow effects for enhanced visual appeal
+- 🌊 Edge fading effect for seamless integration
+- 🎛️ Configurable particle count and animation speed
+- 🔄 Automatic particle recycling for smooth continuous flow
+- 🖥️ Optimized for high-DPI displays
+- 🚀 Memory efficient with particle pooling
+
+## Notice
+
+This component renders a full-screen canvas background and should be placed as a background element. Content should be positioned with `relative z-10` or higher to appear above the particles. The component is pointer-events disabled to not interfere with page interactions.
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>direction</code></TableCell>
+      <TableCell><code>'left-to-right' | 'right-to-left' | 'top-to-bottom' | 'bottom-to-top' | 'diagonal-tl-br' | 'diagonal-tr-bl'</code></TableCell>
+      <TableCell><code>'left-to-right'</code></TableCell>
+      <TableCell>Direction of particle movement</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>speed</code></TableCell>
+      <TableCell><code>number</code></TableCell>
+      <TableCell><code>50</code></TableCell>
+      <TableCell>Particle movement speed in pixels per second</TableCell>
+    </TableRow>
+   
+    <TableRow>
+      <TableCell><code>maxParticles</code></TableCell>
+      <TableCell><code>number</code></TableCell>
+      <TableCell><code>150</code></TableCell>
+      <TableCell>Total number of particles on screen</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>dotsEnabled</code></TableCell>
+      <TableCell><code>boolean</code></TableCell>
+      <TableCell><code>true</code></TableCell>
+      <TableCell>Whether to show dot particles</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>dotColor</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>'#a78bfa'</code></TableCell>
+      <TableCell>Color of dot particles (hex/rgb/hsl)</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>dotSize</code></TableCell>
+      <TableCell><code>number</code></TableCell>
+      <TableCell><code>2</code></TableCell>
+      <TableCell>Maximum size of dot particles in pixels</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>dotOpacity</code></TableCell>
+      <TableCell><code>number</code></TableCell>
+      <TableCell><code>0.6</code></TableCell>
+      <TableCell>Opacity of dot particles (0-1)</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>linesEnabled</code></TableCell>
+      <TableCell><code>boolean</code></TableCell>
+      <TableCell><code>true</code></TableCell>
+      <TableCell>Whether to show line particles</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>lineColor</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>'#60a5fa'</code></TableCell>
+      <TableCell>Color of line particles (hex/rgb/hsl)</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>lineWidth</code></TableCell>
+      <TableCell><code>number</code></TableCell>
+      <TableCell><code>1</code></TableCell>
+      <TableCell>Width/thickness of line particles in pixels</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>lineLength</code></TableCell>
+      <TableCell><code>number</code></TableCell>
+      <TableCell><code>10</code></TableCell>
+      <TableCell>Maximum length of line particles in pixels</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>lineOpacity</code></TableCell>
+      <TableCell><code>number</code></TableCell>
+      <TableCell><code>0.5</code></TableCell>
+      <TableCell>Opacity of line particles (0-1)</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>backgroundColor</code></TableCell>
+      <TableCell><code>string</code></TableCell>
+      <TableCell><code>'#0f0f0f'</code></TableCell>
+      <TableCell>Background color of the canvas</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>glow</code></TableCell>
+      <TableCell><code>boolean</code></TableCell>
+      <TableCell><code>true</code></TableCell>
+      <TableCell>Whether to add glow/shadow effects to particles</TableCell>
+    </TableRow>
+    
+    <TableRow>
+      <TableCell><code>fadeEdges</code></TableCell>
+      <TableCell><code>boolean</code></TableCell>
+      <TableCell><code>true</code></TableCell>
+      <TableCell>Whether particles fade out near canvas edges</TableCell>
+    </TableRow>
+    
+  </TableBody>
+</Table>
+
+## Direction Options
+
+The component supports six different movement directions:
+
+- **left-to-right**: Particles flow from left edge to right edge
+- **right-to-left**: Particles flow from right edge to left edge  
+- **top-to-bottom**: Particles flow from top edge to bottom edge
+- **bottom-to-top**: Particles flow from bottom edge to top edge
+- **diagonal-tl-br**: Particles flow diagonally from top-left to bottom-right
+- **diagonal-tr-bl**: Particles flow diagonally from top-right to bottom-left
+
+## Performance Tips
+
+- Lower `maxParticles` for better performance on mobile devices
+- Disable `glow` effects for improved performance
+- Use solid colors instead of gradients when possible
+- Consider reducing `speed` for smoother animations on lower-end devices
+
+## Examples
+
+<CopyCode>
+  {`// Hero section background
+<section className="relative min-h-screen flex items-center justify-center">
+  <ParticleBackground 
+    direction="left-to-right"
+    dotColor="#8b5cf6"
+    lineColor="#a78bfa"
+    backgroundColor="#0f0f23"
+  />
+  <div className="relative z-10 text-center text-white">
+    <h1 className="text-6xl font-bold mb-4">Welcome</h1>
+    <p className="text-xl">Amazing particle background</p>
+  </div>
+</section>
+
+// Card with particle background
+<div className="relative overflow-hidden rounded-xl">
+  <ParticleBackground 
+    maxParticles={50}
+    speed={30}
+    backgroundColor="#1f2937"
+    dotColor="#10b981"
+    lineColor="#059669"
+  />
+  <div className="relative z-10 p-8">
+    <h3>Card Content</h3>
+  </div>
+</div>`}
+</CopyCode>

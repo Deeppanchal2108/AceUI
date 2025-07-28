@@ -17,6 +17,7 @@
 //     MoreHorizontal,
 //     User
 // } from 'lucide-react';
+import {ParticleBackground} from "@/components/ace-ui/ParticleBackground";
 
 
 // import { UserCard } from "@/components/ace-ui/UserCard";
@@ -47,6 +48,39 @@ function Page() {
         <div className=" text-white bg-black font-sans px-4 py-10">
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+
+
+                <div className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
+                    {/* The ParticleBackground component acts as the background */}
+                    <ParticleBackground
+                        direction="top-to-bottom"
+                        speed={50} // 50 pixels per second
+                        maxParticles={150}
+                        dotsEnabled={true}
+                        dotColor="#a78bfa" // Purple dots
+                        dotSize={2}
+                        dotOpacity={0.6}
+                        linesEnabled={true}
+                        lineColor="#60a5fa" // Blue lines
+                        lineWidth={1}
+                        lineLength={8}
+                        lineOpacity={0.5}
+                        backgroundColor="#0f0f0f" // Dark background
+                        glow={true}
+                        fadeEdges={true}
+                    />
+
+                    {/* Your content goes here, on top of the background */}
+                    <div className="relative z-10 text-center p-8 bg-black/30 rounded-lg backdrop-blur-sm border border-gray-700 shadow-lg">
+                        <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+                            Welcome to the Flow
+                        </h1>
+                        <p className="text-lg text-gray-200">This is a simple, optimized particle background.</p>
+                        <p className="text-sm mt-2 text-gray-400">
+                            You should now see small dots and lines traveling from left to right, with a subtle glow.
+                        </p>
+                    </div>
+                </div>
                              {/* <Tooltip side="bottom" align="center" content="Copy to clipboard">
                     <Button className="rounded bg-neutral-800 px-2 py-1 text-white">
                         📋 Copy
