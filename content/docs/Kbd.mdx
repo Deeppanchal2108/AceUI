@@ -34,12 +34,12 @@ slug: components/kbd
 ## Usage
 
 <CopyCode>
-  {`import { Kbd } from "@/components/kbd";
+  {`import { Kbd } from "@/components/ui/kbd";
 
 export default function Example() {
   return (
-    <div>
-      <Kbd keys={["command", "delete", "p"]} />
+    <div className="flex items-center gap-3">
+      <Kbd size="md" keys={["command", "delete", "p"]} />
     </div>
   );
 }`}
@@ -48,9 +48,7 @@ export default function Example() {
 ## Variants
 
 <CopyCode>
-  {`// Default variant
-<Kbd keys={["ctrl", "c"]} />
-
+  {`
 // Outline variant  
 <Kbd keys={["shift", "enter"]} variant="outline" />
 
@@ -82,18 +80,12 @@ export default function Example() {
 
 ## Features
 
-- ⌨️ Realistic keyboard key styling with gradients and shadows
-- 🔤 Support for special keys with proper Unicode symbols
-- 📏 Multiple sizes: `sm`, `md`, `lg`
-- 🎨 Three variants: `default`, `outline`, `ghost`
-- 🌙 Dark mode support with proper contrast
-- 🔗 Supports key combinations and sequences
-- ♿ Accessible with proper semantic structure
-- ⚙️ TypeScript support with predefined key types
-
-## Notice
-
-The component uses Unicode symbols for special keys which may not render consistently across all fonts and operating systems. Test thoroughly in your target environments.
+-  Realistic keyboard key styling with gradients and shadows
+-  Support for special keys with proper Unicode symbols
+-  Multiple sizes: `sm`, `md`, `lg`
+-  Three variants: `default`, `outline`, `ghost`
+-  Supports key combinations and sequences
+-  TypeScript support with predefined key types
 
 ## Props
 
@@ -172,7 +164,5 @@ The component supports the following predefined keys with special symbols:
 "home" → ⇱
 "end" → ⇲
 "help" → ?
-
-// Custom keys
-Any string not in the above list will be displayed in uppercase`}
+`}
 </CopyCode>

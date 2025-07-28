@@ -1,5 +1,4 @@
 ---
-
 title: Text Scramble
 description: A hover effect that scrambles characters and animates them back to the original text.
 author: deep
@@ -9,101 +8,128 @@ slug: components/text-scramble
 ---
 
 <ComponentPreview name="text-scramble" />
-<InfoOut> The TextScramble component animates text by scrambling and revealing characters in a smooth, randomized sequence — perfect for attention-grabbing headings or playful UI effects</InfoOut>
+
+<InfoOut>The TextScramble component creates an engaging hover effect that scrambles text characters with random symbols before smoothly revealing the original text, perfect for interactive headings and eye-catching UI elements.</InfoOut>
 
 ## Installation
 
 <Tabs defaultValue="cli">
-
 <TabsList>
 <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-
+<TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
-
 <TabsContent value="cli">
 <CopyCode>
-      {`npx shadcn@latest add "https://ace-ui-six.vercel.app/r/fancy-button.json"`}
-    </CopyCode>
-
+{`npx shadcn@latest add "https://ace-ui-six.vercel.app/r/text-scramble.json"`}
+</CopyCode>
 </TabsContent>
 <TabsContent value="manual">
-
 <Steps>
-
 <Step>Copy and paste the following code into your project.</Step>
 <ComponentSource name="text-scramble" />
-
 </Steps>
-
 </TabsContent>
-
 </Tabs>
-
-
-
-
 
 ## Usage
 
 <CopyCode>
-  {`import { TestScramble } from "@/components/test-scramble";
+{`
+import { TextScramble } from "@/components/ui/text-scramble"; 
 
-export default function Example() {
-  return <FancyButton>Click Me</FancyButton>;
-}`}
+export default function ScrambleExample() {
+ return (
+   <div className="flex justify-center items-center h-screen bg-gray-900 text-white">
+     <TextScramble 
+       className="text-blue-400"
+       speed={30}
+       duration={800}
+     >
+       Hover Over This Text
+     </TextScramble>
+   </div>
+ );
+}
+`}
 </CopyCode>
 
-
-
-
-## Variants
-hello
-
 ## Features
-- ✅ Animated ripple effect  
-- 🌈 Multiple variants: `primary`, `outline`, `ghost`  
-- ♿ Accessible and keyboard-friendly  
-- 🎨 Fully customizable with Tailwind  
-- ⚙️ Typesafe props with IntelliSense support  
 
-## Notice
--somehting somehting 
-
+- Character scrambling animation on hover
+- Customizable animation speed and duration  
+- Responsive text sizing with Tailwind breakpoints
+- Smooth transition effects
+- TypeScript support with full type safety
+- Uses Jost font for modern typography
 
 ## Props
-<Table >
-  <TableHeader>
-    <TableRow>
-      <TableHead>Prop</TableHead >
-      <TableHead>Type</TableHead >
-      <TableHead>Default</TableHead >
-      <TableHead>Description</TableHead >
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-    <TableRow>
-      <TableCell><code>children</code></TableCell >
-      <TableCell><code>React.ReactNode</code></TableCell >
-      <TableCell>—</TableCell >
-      <TableCell>Content inside the button</TableCell >
-    </TableRow>
-    
 
-    
-    <TableRow>
-      <TableCell><code>children</code></TableCell >
-      <TableCell><code>React.ReactNode</code></TableCell >
-      <TableCell>—</TableCell >
-      <TableCell>Content inside the button</TableCell >
-    </TableRow>
-   
-    <TableRow>
-      <TableCell><code>children</code></TableCell >
-      <TableCell><code>React.ReactNode</code></TableCell >
-      <TableCell>—</TableCell >
-      <TableCell>Content inside the button</TableCell >
-    </TableRow>
-    
-  </TableBody>
+<Table>
+ <TableHeader>
+   <TableRow>
+     <TableHead>Prop</TableHead>
+     <TableHead>Type</TableHead>
+     <TableHead>Default</TableHead>
+     <TableHead>Description</TableHead>
+   </TableRow>
+ </TableHeader>
+ <TableBody>
+   <TableRow>
+     <TableCell><code>children</code></TableCell>
+     <TableCell><code>string</code></TableCell>
+     <TableCell><code>"Scramble Me!"</code></TableCell>
+     <TableCell>The text content to be scrambled</TableCell>
+   </TableRow>
+   <TableRow>
+     <TableCell><code>speed</code></TableCell>
+     <TableCell><code>number</code></TableCell>
+     <TableCell><code>50</code></TableCell>
+     <TableCell>Animation speed in milliseconds between frames</TableCell>
+   </TableRow>
+   <TableRow>
+     <TableCell><code>duration</code></TableCell>
+     <TableCell><code>number</code></TableCell>
+     <TableCell><code>1000</code></TableCell>
+     <TableCell>Total duration of the scramble effect in milliseconds</TableCell>
+   </TableRow>
+   <TableRow>
+     <TableCell><code>className</code></TableCell>
+     <TableCell><code>string</code></TableCell>
+     <TableCell><code>""</code></TableCell>
+     <TableCell>Additional CSS classes for styling</TableCell>
+   </TableRow>
+ </TableBody>
 </Table>
+
+## Examples
+
+### Basic Usage
+<CopyCode>
+{`
+<TextScramble>
+ Welcome to our site
+</TextScramble>
+`}
+</CopyCode>
+
+### Custom Speed and Duration
+<CopyCode>
+{`
+<TextScramble 
+ speed={25} 
+ duration={1500}
+ className="text-green-400 hover:text-green-300"
+>
+ Fast Scramble Effect
+</TextScramble>
+`}
+</CopyCode>
+
+### Large Heading
+<CopyCode>
+{`
+<TextScramble className="text-6xl font-black text-gradient">
+ AMAZING TITLE
+</TextScramble>
+`}
+</CopyCode>

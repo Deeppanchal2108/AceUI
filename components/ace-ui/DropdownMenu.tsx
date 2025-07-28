@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { LucideIcon } from 'lucide-react';
 import {
+    User, Home, Settings,
    
     MoreHorizontal,
     
@@ -38,7 +39,26 @@ interface DropdownMenuProps {
 export const DropdownMenu: React.FC<DropdownMenuProps> = ({
     triggerIcon: TriggerIcon = MoreHorizontal,
     triggerText = "More",
-    menuItems = [],
+    menuItems = [
+        {
+            icon: Home,
+            label: "Home",
+            id: "home",
+            href: "/home",
+        },
+        {
+            icon: User,
+            label: "Profile",
+            id: "profile",
+            href: "/profile",
+        },
+        {
+            icon: Settings,
+            label: "Settings",
+            id: "settings",
+            href: "/settings",
+            disabled: true,
+        },],
     buttonText = "Post",
     buttonHref = "/post",
     buttonExternal = false,

@@ -31,13 +31,15 @@ export function AnimatedShinyTextDemo() {
 
 export function AnimatedSubscribeButtonDemo() {
     return (
-        <Button className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]  py-[5px]">
+        <Link href={"/components/text-scramble"} >
+        <Button className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px] hover:cursor-pointer  py-[5px]">
             <span className="group inline-flex items-center text-xs sm:text-sm md:text-base font-jost">
-                <Link href={"/components/text-scramble"}>Browse Components</Link>
+                Browse Components
                 <ChevronRightIcon className="ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           
         </Button>
+        </Link >
     );
 }
 

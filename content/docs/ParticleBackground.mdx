@@ -9,7 +9,7 @@ slug: components/particle-background
 
 <ComponentPreview name="particle-background" />
 
-<InfoOut>The ParticleBackground component creates stunning animated backgrounds with flowing particles, dots, and lines - perfect for hero sections, landing pages, and immersive experiences</InfoOut>
+<InfoOut>The ParticleBackground component creates stunning animated backgrounds with flowing particles, dots, and lines , perfect for hero sections, landing pages, and immersive experiences</InfoOut>
 
 ## Installation
 
@@ -20,7 +20,7 @@ slug: components/particle-background
 </TabsList>
 <TabsContent value="cli">
 <CopyCode>
-      {`npx shadcn@latest add "https://your-registry.com/r/particle-background.json"`}
+      {`npx shadcn@latest add "https://ace-ui-six.vercel.app/r/particle-background.json"`}
     </CopyCode>
 </TabsContent>
 <TabsContent value="manual">
@@ -38,111 +38,42 @@ slug: components/particle-background
 
 export default function Example() {
   return (
-    <div className="relative min-h-screen">
-      <ParticleBackground />
-      <div className="relative z-10 p-8">
-        <h1>Your content here</h1>
-      </div>
+    <div className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
+     
+      <ParticleBackground
+        direction="left-to-right"
+        speed={50} // 50 pixels per second
+        maxParticles={150}
+        dotsEnabled={true}
+        dotColor="#a78bfa" // Purple dots
+        dotSize={2}
+        dotOpacity={0.6}
+        linesEnabled={true}
+        lineColor="#60a5fa" // Blue lines
+        lineWidth={1}
+        lineLength={8}
+        lineOpacity={0.5}
+        backgroundColor="#0f0f0f" // Dark background
+        glow={true}
+        fadeEdges={true}
+      />
     </div>
   );
-}`}
+}
+`}
 </CopyCode>
-
-## Variants
-
-<CopyCode>
-  {`// Default left-to-right flow
-<ParticleBackground />
-
-// Right to left movement
-<ParticleBackground 
-  direction="right-to-left"
-  dotColor="#10b981"
-  lineColor="#059669"
-/>
-
-// Vertical top to bottom
-<ParticleBackground 
-  direction="top-to-bottom"
-  speed={30}
-  maxParticles={100}
-/>
-
-// Diagonal movement
-<ParticleBackground 
-  direction="diagonal-tl-br"
-  dotColor="#f59e0b"
-  lineColor="#d97706"
-  glow={true}
-/>
-
-// Only dots, no lines
-<ParticleBackground 
-  dotsEnabled={true}
-  linesEnabled={false}
-  dotColor="#8b5cf6"
-  dotSize={3}
-  maxParticles={200}
-/>
-
-// Only lines, no dots
-<ParticleBackground 
-  dotsEnabled={false}
-  linesEnabled={true}
-  lineColor="#06b6d4"
-  lineLength={15}
-  lineWidth={2}
-/>
-
-// Slow moving with custom colors
-<ParticleBackground 
-  direction="bottom-to-top"
-  speed={20}
-  dotColor="#ec4899"
-  lineColor="#be185d"
-  backgroundColor="#1f1f23"
-  fadeEdges={true}
-/>
-
-// Fast energetic background
-<ParticleBackground 
-  direction="left-to-right"
-  speed={100}
-  maxParticles={300}
-  dotColor="#ef4444"
-  lineColor="#dc2626"
-  glow={true}
-/>
-
-// Subtle minimal effect
-<ParticleBackground 
-  speed={25}
-  maxParticles={50}
-  dotOpacity={0.3}
-  lineOpacity={0.2}
-  backgroundColor="#fafafa"
-  dotColor="#374151"
-  lineColor="#6b7280"
-  glow={false}
-/>`}
-</CopyCode>
+ 
 
 ## Features
 
-- 🎯 Six movement directions: left-to-right, right-to-left, top-to-bottom, bottom-to-top, diagonal
-- ⚡ High-performance 60fps animation with requestAnimationFrame
-- 🎨 Separate customization for dots and lines (colors, sizes, opacity)
-- 📱 Responsive canvas that adapts to screen size and device pixel ratio
-- 🌟 Optional glow effects for enhanced visual appeal
-- 🌊 Edge fading effect for seamless integration
-- 🎛️ Configurable particle count and animation speed
-- 🔄 Automatic particle recycling for smooth continuous flow
-- 🖥️ Optimized for high-DPI displays
-- 🚀 Memory efficient with particle pooling
+-  Six movement directions: left-to-right, right-to-left, top-to-bottom, bottom-to-top, diagonal
+-  Separate customization for dots and lines (colors, sizes, opacity)
+-  Responsive canvas that adapts to screen size and device pixel ratio
+-  Optional glow effects for enhanced visual appeal
+-  Edge fading effect for seamless integration
+-  Configurable particle count and animation speed
 
-## Notice
 
-This component renders a full-screen canvas background and should be placed as a background element. Content should be positioned with `relative z-10` or higher to appear above the particles. The component is pointer-events disabled to not interfere with page interactions.
 
 ## Props
 
@@ -281,35 +212,3 @@ The component supports six different movement directions:
 - Disable `glow` effects for improved performance
 - Use solid colors instead of gradients when possible
 - Consider reducing `speed` for smoother animations on lower-end devices
-
-## Examples
-
-<CopyCode>
-  {`// Hero section background
-<section className="relative min-h-screen flex items-center justify-center">
-  <ParticleBackground 
-    direction="left-to-right"
-    dotColor="#8b5cf6"
-    lineColor="#a78bfa"
-    backgroundColor="#0f0f23"
-  />
-  <div className="relative z-10 text-center text-white">
-    <h1 className="text-6xl font-bold mb-4">Welcome</h1>
-    <p className="text-xl">Amazing particle background</p>
-  </div>
-</section>
-
-// Card with particle background
-<div className="relative overflow-hidden rounded-xl">
-  <ParticleBackground 
-    maxParticles={50}
-    speed={30}
-    backgroundColor="#1f2937"
-    dotColor="#10b981"
-    lineColor="#059669"
-  />
-  <div className="relative z-10 p-8">
-    <h3>Card Content</h3>
-  </div>
-</div>`}
-</CopyCode>

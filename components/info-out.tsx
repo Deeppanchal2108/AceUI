@@ -32,7 +32,7 @@ function InfoOut({ children, variant, className }: InfoOutProps) {
             <span className="text-xl sm:text-lg mx-1 sm:mx-2">
                 {icons[variant || 'info']}
             </span>
-            <p className="text-sm sm:text-base">{children}</p>
+            <div className="text-sm sm:text-base">{children}</div>
         </div>
     )
 }

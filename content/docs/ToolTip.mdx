@@ -30,7 +30,7 @@ slug: components/tool-tip
 {`npm install @radix-ui/react-tooltip`}
 </CopyCode>
 <Step>Copy and paste the following code into your project.</Step>
-<ComponentSource name="tooltip" />
+<ComponentSource name="tool-tip" />
 </Steps>
 </TabsContent>
 </Tabs>
@@ -54,91 +54,20 @@ export default function Example() {
 }`}
 </CopyCode>
 
-## Variants
 
-<CopyCode>
-  {`// Different sides
-<Tooltip content="Tooltip on top" side="top">
-  <button>Top</button>
-</Tooltip>
-
-<Tooltip content="Tooltip on bottom" side="bottom">
-  <button>Bottom</button>
-</Tooltip>
-
-<Tooltip content="Tooltip on left" side="left">
-  <button>Left</button>
-</Tooltip>
-
-<Tooltip content="Tooltip on right" side="right">
-  <button>Right</button>
-</Tooltip>
-
-// Different alignments
-<Tooltip content="Aligned to start" align="start">
-  <button>Start Aligned</button>
-</Tooltip>
-
-<Tooltip content="Centered alignment" align="center">
-  <button>Center Aligned</button>
-</Tooltip>
-
-<Tooltip content="Aligned to end" align="end">
-  <button>End Aligned</button>
-</Tooltip>
-
-// Rich content
-<Tooltip 
-  content={
-    <div>
-      <div className="font-semibold">Pro Tip</div>
-      <div className="text-xs opacity-90">Use Cmd+C to copy</div>
-    </div>
-  }
->
-  <button>Rich Tooltip</button>
-</Tooltip>
-
-// Custom styling
-<Tooltip 
-  content="Custom styled tooltip"
-  className="bg-blue-600 text-blue-50"
->
-  <button>Custom Style</button>
-</Tooltip>
-
-// With icons
-<Tooltip content="Delete this item">
-  <button className="text-red-500 hover:text-red-700">
-    <Trash2 className="w-4 h-4" />
-  </button>
-</Tooltip>
-
-// Long content
-<Tooltip 
-  content="This is a longer tooltip content that demonstrates how the component handles more text and wraps appropriately within the maximum width constraint."
->
-  <button>Long Content</button>
-</Tooltip>`}
-</CopyCode>
 
 ## Features
 
-- ♿ Fully accessible with ARIA attributes and keyboard navigation
-- 🎯 Smart positioning with collision detection
-- ⏱️ Configurable delay duration (100ms default)
-- 🎨 Customizable styling with className prop
-- 📍 Four positioning sides: top, bottom, left, right
-- ↔️ Three alignment options: start, center, end
-- 🎭 Smooth animations with fade and zoom effects
-- 🖱️ Triggers on hover, focus, and touch
-- 📱 Mobile-friendly with touch support
-- 🎯 Arrow pointer for better visual connection
+-  Customizable styling with className prop
+-  Four positioning sides: top, bottom, left, right
+-  Three alignment options: start, center, end
+-  Smooth animations with fade and zoom effects
+-  Arrow pointer for better visual connection
 
 ## Notice
-
+<InfoOut variant="warning">
 This component requires `@radix-ui/react-tooltip` as a dependency. The tooltip automatically handles collision detection and will flip sides if there's insufficient space.
-
+</InfoOut>
 ## Props
 
 <Table>

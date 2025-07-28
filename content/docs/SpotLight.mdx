@@ -34,78 +34,31 @@ slug: components/spot-light
 ## Usage
 
 <CopyCode>
-  {`import { SpotLight } from "@/components/spotlight";
+  {`import { SpotLight } from "@/components/ui/spotlight";
 
 export default function Example() {
   return (
     <div>
-      <SpotLight>
+      <SpotLight
+        className="h-52 w-40 flex justify-center items-center bg-black border border-white"
+        spotlightColor="rgba(151, 151, 151, 0.1)"
+      >
         Hover me
       </SpotLight>
     </div>
   );
-}`}
+}
+`}
 </CopyCode>
 
-## Variants
-
-<CopyCode>
-  {`// Basic usage
-<SpotLight>
-  <p>Basic spotlight effect</p>
-</SpotLight>
-
-// Custom spotlight color
-<SpotLight spotlightColor="rgba(59, 130, 246, 0.15)">
-  <p>Blue spotlight</p>
-</SpotLight>
-
-// Custom styling
-<SpotLight 
-  className="h-64 w-80 bg-gradient-to-br from-gray-900 to-black p-6 flex items-center justify-center text-white"
-  spotlightColor="rgba(168, 85, 247, 0.2)"
->
-  <div className="text-center">
-    <h3 className="text-xl font-bold">Premium Card</h3>
-    <p className="text-gray-300">With purple spotlight</p>
-  </div>
-</SpotLight>
-
-// Card-like usage
-<SpotLight 
-  className="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg border"
-  spotlightColor="rgba(34, 197, 94, 0.1)"
->
-  <h4 className="font-semibold mb-2">Interactive Card</h4>
-  <p className="text-sm text-gray-600 dark:text-gray-300">
-    This card has a green spotlight effect on hover
-  </p>
-</SpotLight>
-
-// Different sizes
-<SpotLight className="h-32 w-32 rounded-full">
-  <span>Small</span>
-</SpotLight>
-
-<SpotLight className="h-96 w-72 p-8">
-  <div>Large spotlight area</div>
-</SpotLight>`}
-</CopyCode>
 
 ## Features
 
-- ✨ Smooth spotlight effect that follows mouse movement
-- 🎨 Customizable spotlight color with RGBA support
-- 🖱️ Responsive to mouse enter, leave, focus, and blur events
-- 🎯 Fade in/out animations for smooth transitions
-- 📱 Touch-friendly and accessible
-- 🌙 Works seamlessly with dark mode
-- ⚙️ Fully customizable styling with className prop
-- 🔧 TypeScript support with proper type definitions
-
-## Notice
-
-The spotlight effect uses CSS radial gradients and may have performance implications on lower-end devices when used extensively. Consider limiting the number of active spotlight components on a single page.
+-  Smooth spotlight effect that follows mouse movement
+-  Customizable spotlight color with RGBA support
+-  Responsive to mouse enter, leave, focus, and blur events
+-  Fade in/out animations for smooth transitions
+-  TypeScript support with proper type definitions
 
 ## Props
 

@@ -9,7 +9,7 @@ slug: components/dropdown-menu
 
 <ComponentPreview name="dropdown-menu" />
 
-<InfoOut>The DropdownMenu component provides a flexible dropdown interface with icon support, customizable positioning, and action buttons - perfect for navigation menus, context menus, and user actions</InfoOut>
+<InfoOut>The DropdownMenu component provides a flexible dropdown interface with icon support, customizable positioning, and action buttons , perfect for navigation menus, context menus, and user actions</InfoOut>
 
 ## Installation
 
@@ -34,28 +34,52 @@ slug: components/dropdown-menu
 ## Usage
 
 <CopyCode>
-  {`import { DropdownMenu } from "@/components/dropdown-menu";
-import { Settings, User, LogOut, Plus } from "lucide-react";
+  {`
+import {
+  List,
+  Bookmark,
+  DollarSign,
+  Shield,
+  MessageSquare,
+  Briefcase,
+  Plus,
+  Settings,
+} from "lucide-react";
+import { DropdownMenu } from "@/components/ui/DropdownMenu";
 
-const menuItems = [
-  { icon: User, label: "Profile", id: "profile", href: "/profile" },
-  { icon: Settings, label: "Settings", id: "settings", href: "/settings" },
-  { icon: LogOut, label: "Sign Out", id: "signout", href: "/logout" }
-];
+export default function DropdownExample() {
+  const menuItems = [
+    { icon: List, label: "Lists", id: "lists" },
+    { icon: Bookmark, label: "Bookmarks", id: "bookmarks" },
+    { icon: DollarSign, label: "Monetization", id: "monetization" },
+    { icon: Shield, label: "Verified Orgs", id: "verified" },
+    { icon: MessageSquare, label: "Ads", id: "ads" },
+    { icon: Briefcase, label: "Jobs", id: "jobs" },
+    { icon: Plus, label: "Create your Space", id: "create-space" },
+    { icon: Settings, label: "Settings & Privacy", id: "settings" },
+  ];
 
-export default function Example() {
   return (
-    <div>
-      <DropdownMenu 
-        triggerIcon={Plus}
-        triggerText="Actions"
-        menuItems={menuItems}
-        buttonText="Create Post"
-        buttonHref="/create"
-      />
+    <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
+      <div className="bg-neutral-900 rounded-2xl shadow-lg p-6 w-full max-w-md border border-neutral-700">
+        <h3 className="text-lg font-semibold mb-4 text-purple-400">Menu Example</h3>
+        <div className="flex justify-center">
+          <DropdownMenu
+            triggerText="Open Menu"
+            menuItems={menuItems}
+            buttonText="Continue"
+            buttonHref="/next-step"
+            position="left" // or "right"
+            width="w-64"
+            triggerClassName="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded"
+            itemClassName="hover:bg-purple-800 px-4 py-3 text-sm"
+          />
+        </div>
+      </div>
     </div>
   );
-}`}
+}
+`}
 </CopyCode>
 
 ## Variants
@@ -133,20 +157,10 @@ export default function Example() {
 
 ## Features
 
-- 🎯 Click outside to close functionality
-- 🔗 Support for internal and external links
-- 📍 Flexible positioning: left, right, center
-- 🎨 Fully customizable styling with className props
-- 🚫 Disabled state support for items and trigger
-- 📱 Responsive and touch-friendly
-- ⌨️ Keyboard accessible with focus management
-- 🖼️ Icon support with Lucide React icons
-- 🔄 Smooth animations and transitions
-- ⚙️ TypeScript support with comprehensive types
-
-## Notice
-
-The component uses `window.location.href` for internal navigation. For Next.js applications, consider extending it to use `next/router` or `next/navigation` for better performance and user experience.
+- Support for internal and external links
+- Flexible positioning: left, right, center
+- Disabled state support for items and trigger
+- TypeScript support with comprehensive types
 
 ## Props
 
