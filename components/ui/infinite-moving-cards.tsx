@@ -62,23 +62,27 @@ export const InfiniteMovingCards = ({
     const walk = (x - startX) * 2
     scrollerRef.current.scrollLeft = scrollLeft - walk
   }
-
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children)
+      const containerWidth = containerRef.current.offsetWidth;
+      const contentWidth = scrollerRef.current.scrollWidth;
 
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true)
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem)
-        }
-      })
+      let totalContentWidth = contentWidth;
+      while (totalContentWidth < containerWidth * 2) {
+        const scrollerContent = Array.from(scrollerRef.current.children);
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          scrollerRef.current?.appendChild(duplicatedItem);
+        });
+        totalContentWidth = scrollerRef.current.scrollWidth;
+      }
 
-      getDirection()
-      getSpeed()
-      setStart(true)
+      getDirection();
+      getSpeed();
+      setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
