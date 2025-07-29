@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import React, { useEffect, useState } from "react"
+import Image from "next/image"
 
 export const InfiniteMovingCards = ({
   items,
@@ -10,9 +11,10 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string
-    name: string
-    title: string
+    image: string
+    alt: string
+    
+    
   }[]
   direction?: "left" | "right"
   speed?: "fast" | "normal" | "slow"
@@ -116,28 +118,16 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item) => (
           <li
-            className="relative w-[300px] h-[330px] rounded-md max-w-full shrink-0 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[300px]"
-            key={item.name}
+            className="relative w-[300px] h-[340px] rounded-md max-w-full shrink-0 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[300px]"
+            key={item.alt}
           >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                    {item.title}
-                  </span>
-                </span>
-              </div>
-            </blockquote>
+            <Image
+              src={item.image || "/placeholder.svg"}
+              alt={item.alt}
+              fill // Makes the image fill the parent
+              className="object-cover rounded-md" // Ensures image covers and maintains aspect ratio
+            />
+
           </li>
         ))}
       </ul>

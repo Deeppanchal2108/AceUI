@@ -2,8 +2,8 @@
 import type React from "react"
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { CometCard } from "@/components/comet-card"
-import Image from "next/image"
+// import { CometCard } from "@/components/comet-card"
+// import Image from "next/image"
 
 interface TableOfContents {
   title: string
@@ -52,7 +52,7 @@ const TableOfContents: React.FC<Props> = ({ toc }) => {
           ))}
         </div>
 
-        <div className="absolute bottom-30 left-1/2 transform -translate-x-1/2">
+        {/* <div className="absolute bottom-30 left-1/2 transform -translate-x-1/2">
           <div className="w-22 h-48 mx-auto">
             <CometCard className="-rotate-25">
               <div
@@ -77,7 +77,7 @@ const TableOfContents: React.FC<Props> = ({ toc }) => {
           <h3 className="w-full text-white text-center -mt-14 tracking-tight leading-tight">
             Ace your frontend. Build with AceUI
           </h3>
-        </div>
+        </div> */}
       </div>
     </div>
   )

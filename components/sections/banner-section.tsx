@@ -12,8 +12,8 @@ function BannerSection() {
             src="/banner-in.png"
             alt="Landing page preview"
             className="aspect-[16/9] h-auto w-full object-cover"
-            width={1200}
-            height={675}
+            width={1300}
+            height={705}
             priority
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
           />
