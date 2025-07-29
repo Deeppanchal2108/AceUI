@@ -42,17 +42,18 @@ function PreFooter() {
 
 
             <h1 className="font-jost pt-10 sm:pt-14 text-white text-2xl sm:text-4xl md:text-5xl font-semibold leading-snug sm:leading-tight text-center tracking-tight mb-6 relative flex flex-col justify-center items-center">
-                <span>Where beautiful UIs begin</span>
+                <span>Ace your UI with AceUI.</span>
                 <span className="">Start Today</span>
             </h1>
 
             
             <div className='flex flex-row gap-3 relative flex justify-center '>
                 <AnimatedSubscribeButtonDemo />
-
-                <Button className='bg-white text-black hover:bg-white hover:text-black text-[13px] md:text-[15px] font-md font-pop'>
-                    <Link href={"/components/installation"}>Read the docs  </Link>
+                <Link href={"/components/installation"}>
+                <Button className='bg-white text-black hover:bg-white hover:cursor-pointer hover:text-black text-[13px] md:text-[15px] font-md font-pop'>
+                        Read the docs  
                 </Button>
+            </Link>
 
             </div>
         </div>

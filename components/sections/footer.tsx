@@ -10,7 +10,7 @@ function Footer() {
                         <ul>
                             <li className="text-2xl font-bold font-mono mb-2 tracking-tight">AceUi</li>
                             <li className="text-sm text-gray-300 mb-4 max-w-xs leading-relaxed">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, incidunt.
+                                Built for developers who care about design and developer experience.
                             </li>
                             <li className="text-xs text-gray-500">© 2025 AceUi. All rights reserved.</li>
                         </ul>
@@ -19,9 +19,9 @@ function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold mb-3 font-pop">Components</h3>
                         <ul className="space-y-2 text-sm text-gray-300">
-                            <li className="hover:text-white transition-colors cursor-pointer">Button</li>
-                            <li className="hover:text-white transition-colors cursor-pointer">Card</li>
-                            <li className="hover:text-white transition-colors cursor-pointer">Portfolio</li>
+                            <li className="hover:text-white transition-colors cursor-pointer"><Link href={"/components/image-text"}>Image Text</Link></li>
+                            <li className="hover:text-white transition-colors cursor-pointer"><Link href={"/components/spot-light"}>SpotLight</Link></li>
+                            <li className="hover:text-white transition-colors cursor-pointer"><Link href={"/components/particle-background"}>Background</Link></li>
                         </ul>
                     </div>
 
@@ -46,7 +46,7 @@ function Footer() {
                             </li>
                             <li className="hover:text-white transition-colors cursor-pointer flex items-center gap-2">
                                 <QrCode size={16} />
-                                <Link href={"https://example.com"}>Website</Link>
+                                <Link href={"https://deep-portfolio-alpha.vercel.app/"}>Website</Link>
                             </li>
                         </ul>
                     </div>

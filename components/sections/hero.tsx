@@ -55,7 +55,7 @@ function Hero() {
                 <div className=' text-gray-300'> Redefined UI building for developers. Quickly add
 
                     <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}> components</Link></span> , <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}>themes</Link></span>, and <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/components/text-scramble"}>responsive</Link></span> </div>
-                <div className=' text-gray-300'> <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/"}> layouts</Link> </span>  to your app at any scale — built with modern CSS and Tailwind, ready to elevate any project.</div>
+                <div className=' text-gray-300'> <span className=' font-semibold  text-gray-200 underline decoration-[0.2px]  underline-offset-4 decoration-gray-600'><Link href={"/"}> layouts</Link> </span>  to your app at any scale , built with modern CSS and Tailwind, ready to elevate any project.</div>
 
 
             </h4>
