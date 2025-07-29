@@ -14,7 +14,7 @@ function Page() {
           <h1 className="text-3xl font-bold mb-6">Introduction</h1>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
-              Build stunning UIs effortlessly with <strong className="text-white">AceUI</strong>  a modern developer-first toolkit packed with beautiful, reusable components, patterns, and layouts. Crafted with Tailwind CSS and clean HTML, AceUI helps you ship fast without sacrificing design or flexibility.
+              Build stunning UIs effortlessly with <strong className="text-white">AceUI</strong>  a modern developer-first toolkit packed with beautiful, reusable components, patterns, and layouts. Crafted with Tailwind CSS and modern React + Next.js architecture, AceUI helps you ship fast without sacrificing design or flexibility.
             </p>
             <p>
               <strong className="text-white">What is AceUI?</strong><br />
