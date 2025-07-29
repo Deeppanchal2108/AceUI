@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "image-text",
+    "type": "registry:ui",
+    "title": "Image Text",
+    "description": "A component that creates text with an image background using CSS background-clip for masking effects.",
+    "files": [
+        {
+            "path": "components/ace-ui/image-text.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/image-text.tsx",
+            "content": "import React from 'react'\nimport { cn } from '@/lib/utils'\ntype TextImageMaskProps = {\n    text: string\n    backgroundImage: string\n    fontSizeClasses?: string\n    fontWeight?: string\n    align?: 'left' | 'center' | 'right'\n    className?: string\n   \n}\nexport  function ImageText({\n    text=\"Ace UI\",\n    backgroundImage =\"/image-text.jpg\",\n    fontSizeClasses = 'text-4xl sm:text-6xl md:text-7xl lg:text-8xl',\n    fontWeight = 'font-extrabold',\n    align = 'center',\n    className = '',\n \n}: TextImageMaskProps) {\n    return (\n        <div\n            className={cn(\n                'text-transparent bg-clip-text bg-cover bg-center',\n                fontSizeClasses,\n                fontWeight,\n                {\n                    'text-left': align === 'left',\n                    'text-center': align === 'center',\n                    'text-right': align === 'right',\n                },\n                className\n            )}\n            style={{\n                backgroundImage: `url(${backgroundImage})`,\n            }}\n        >\n            {text}\n        </div>\n    )\n}"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "spotlight",
+    "type": "registry:ui",
+    "title": "Spotlight",
+    "description": "A component that creates a spotlight effect following the mouse cursor with customizable colors.",
+    "files": [
+        {
+            "path": "components/ace-ui/spotlight.tsx",
+            "type": "registry:ui",
+            "target": "components/ui/spotlight.tsx",
+            "content": "'use client'\nimport * as React from 'react'\nimport { cn } from '@/lib/utils'\ninterface SpotLightProps {\n    children?: React.ReactNode\n    className?: string\n    spotlightColor?: string\n}\nexport const SpotLight = ({\n    className,\n    children,\n    spotlightColor\n}: SpotLightProps) => {\n    const spotRef = React.useRef<HTMLDivElement>(null)\n    const [isGlowing, setIsGlowing] = React.useState(false)\n    const [mouse, setMouse] = React.useState({ x: 0, y: 0 })\n    const [fade, setFade] = React.useState(100)\n    const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!spotRef.current || isGlowing) return\n        const rect = spotRef.current.getBoundingClientRect()\n        setMouse({ x: e.clientX - rect.left, y: e.clientY - rect.top })\n    }\n    const onFocus = () => {\n        setIsGlowing(true)\n        setFade(1)\n    }\n    const onBlur = () => {\n        setIsGlowing(false)\n        setFade(0)\n    }\n    const onMouseEnter = () => {\n        setFade(1)\n    }\n    const onMouseLeave = () => {\n        setFade(0)\n    }\n    return (\n        <div\n            ref={spotRef}\n            onMouseMove={onMouseMove}\n            onFocus={onFocus}\n            onBlur={onBlur}\n            onMouseEnter={onMouseEnter}\n            onMouseLeave={onMouseLeave}\n            className={cn(\n                'bg-background relative size-full overflow-hidden rounded-xl border cursor-pointer text-gray-400 hover:text-white',\n                className\n            )}\n        >\n            {children}\n            <div\n                className=\"pointer-events-none absolute -inset-px opacity-0 transition duration-300\"\n                style={{\n                    opacity: fade,\n                    background: `radial-gradient(400px circle at ${mouse.x}px ${mouse.y}px, ${spotlightColor}, transparent 40%)`\n                }}\n            />\n        </div>\n    )\n}"
+        }
+    ]
+}
