@@ -6,7 +6,7 @@
     "description": "A card component that displays user information with avatar, name, and description.",
     "files": [
         {
-            "path": "components/ace-ui/user-card.tsx",
+            "path": "components/ace-ui/UserCard.tsx",
             "type": "registry:ui",
             "target": "components/ui/user-card.tsx",
             "content": "// components/ui/user-card.tsx\nimport * as React from \"react\";\nimport Image from \"next/image\";\nimport { cn } from \"@/lib/utils\";\ninterface UserCardProps {\n    avatarSrc: string;\n    name: string;\n    description: string;\n    className?: string;\n}\nexport function UserCard({\n    avatarSrc,\n    name,\n    description,\n    className,\n}: UserCardProps) {\n    return (\n        <div\n            className={cn(\n                \"flex items-center gap-4 rounded-xl border bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900\",\n                className\n            )}\n        >\n            <div className=\"relative h-12 w-12 shrink-0 overflow-hidden rounded-full\">\n                <Image\n                    src={avatarSrc}\n                    alt={name}\n                    fill\n                    sizes=\"48px\"\n                    className=\"object-cover\"\n                />\n            </div>\n            <div className=\"space-y-0.5\">\n                <h4 className=\"text-sm font-semibold text-neutral-900 dark:text-neutral-100\">\n                    {name}\n                </h4>\n                <p className=\"text-xs text-neutral-600 dark:text-neutral-400\">\n                    {description}\n                </p>\n            </div>\n        </div>\n    );\n}"
