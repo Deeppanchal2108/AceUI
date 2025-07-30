@@ -27,7 +27,6 @@
 // import { FeedbackWidget } from "@/components/ace-ui/FeedbackWidget";
 // import {DropdownMenu} from "@/components/ace-ui/DropdownMenu";
 
-import { TextScramble } from "@/components/ace-ui/TextScramble";
 function Page() {
     
     // const defaultMenuItems = [
